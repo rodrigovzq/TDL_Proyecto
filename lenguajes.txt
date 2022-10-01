@@ -1,0 +1,141 @@
+Scala: 
+  - multiparadigma (funcional, oop)
+  - JVM and Javascript runtime
+  - general purpose
+  - Data processing, distributed computing, and web development
+  - interoperabilidad con Java
+
+Clojure: (https://programadorwebvalencia.com/cursos/clojure/introducci%C3%B3n/)
+  - funcional
+  - puede ser ejectuado sobre JVM
+  - general purpose
+
+Dart: (https://medium.com/hackernoon/10-good-reasons-why-you-should-learn-dart-4b257708a332#:~:text=Dart%20is%20an%20open%20source,efficient%20language%20to%20work%20with ; https://www.quora.com/Whats-the-deal-with-Dart-as-a-programming-language)
+  - alternativa a Javascript
+  - programación web
+  - oop (support para funcional)
+  - Dart is a general-purpose programming language originally developed by Google and later approved as a standard by Ecma (ECMA-408). It is used to build web, server, desktop, and mobile applications.
+  - Mobile apps written in Dart with Flutter are cross-platform native apps; so they can run on both Android, iOS (like React Native, Xamarin, etc.). You can even write web apps and that code can run on any browser. 
+
+Haskell: (https://medium.com/geekculture/why-haskell-a9117c42da12)
+  - genera purpose
+  - puramente funcional
+
+Rust: (https://stackoverflow.blog/2020/01/20/what-is-rust-and-why-is-it-so-popular/ )
+  - genera purpose
+  - multiparadigma (funcional, imperativa, oop)
+  - compilado
+  - low-levelish programming language with direct access to hardware and memory --> sistemas embebidos
+  - embedded and bare-metal development, heavy data analysis
+
+Julia: (https://towardsdatascience.com/is-julia-actually-right-for-you-b2c003d7cddf ; https://www.quora.com/What-are-some-good-uses-for-the-Julia-programming-language)
+  - ambition to make a language which is capable of quick computing while retaining a high level of abstraction
+  - ideal para machine learning y scientific computing
+  - compilado, high performance
+  - usa muchisima memoria
+
+
+Typescript: (https://www.codemotion.com/magazine/backend/why-you-should-use-typescript-for-your-next-project/ ; https://stackoverflow.com/questions/12694530/what-is-typescript-and-why-would-i-use-it-in-place-of-javascript ; https://dzone.com/articles/what-is-typescript-and-why-use-it) 
+  - agrega syntaxis adicional a JS, corre donde corre JS, entiende JS
+  - es tipado
+  - oop, imperativo
+  - web apps/browser
+  - mejora el server-side de javascript
+
+LUA: (https://www.bmc.com/blogs/lua-programming-language/)
+  - mulitparadigma: estructurado, imperativo, oop, functional
+  - interprete compilado
+  - it is used as a scripting language that can be integrated (embedded) into other programs written in mainly C and C++.
+  - intrepete basado en ansi c
+  - Lua is highly prevalent in video game development as it can be used to create functionality without contaminating the overall performance while also keeping everything separate.
+  - Another area that Lua excels is embedded programming, where size and performance are major concerns
+
+Lisp: (https://www.techtarget.com/whatis/definition/LISP-list-processing#:~:text=Lisp%2C%20an%20acronym%20for%20list,the%20development%20of%20other%20languages. ; 
+https://www.quora.com/What-makes-the-Lisp-programming-language-special)
+  - es una familia de lenguajes? 
+  - multiparadigama: funcional, oop
+  - segundo lenguaje de programacion de alto nivel de mayor angtiguedad
+  - list processing
+  - machine learning, quantum computing
+
+Crystal: (https://auth0.com/blog/an-introduction-to-crystal-lang/)
+  - general purpose
+  - oop
+  - inspirado en Ruby
+  - syatically typed
+  - no tiene mucha comunidad (ej: pocas respuestas stackoverflow), perdio popularidad
+  - las dependencias no estan muy mantenidas
+
+Elixir:
+  - general purpose
+  - funcional
+  - escrito sobre Earlang
+  - Elixir was aimed for large-scale sites and apps. Elixir uses features of Ruby, Erlang, and Clojure to develop a "high-concurrency" and "low-latency" languague.
+
+Ruby: (https://acloudguru.com/blog/engineering/what-is-the-ruby-programming-language ; 
+  https://developer.oracle.com/ruby/what-is-ruby/ ; 
+  https://medium.datadriveninvestor.com/why-ruby-is-a-great-language-to-start-programming-with-2f17e0c2907a)
+  - interpretado
+  - puramente OOP
+  - garbage collector
+  - Ruby is a server-side scripting language similar to Python and PERL.
+  - Ruby is great for building desktop applications, static websites, data processing services, and even automation tools. It’s used for web servers, DevOps, and web scraping and crawling.
+  - Ruby stands alone as a high-level programming language. But you really can’t talk about Ruby without mentioning Rails. Ruby on Rails is the application framework that thrust Ruby into the spotlight, boosted its popularity, and made it a great language for the cloud:
+    The Ruby on Rails framework consists of pre-written Ruby code for things like communication, file handling, database connections, and more. It takes care of the tedious items, so you can focus on solving problems. One of the key concepts of Rails is DRY — Don’t Repeat Yourself — which is key to the framework’s efficiency.
+  - se usa mucho para web apps
+
+Go: (https://www.trio.dev/blog/what-is-golang-used-for ;
+  https://acloudguru.com/blog/engineering/what-is-go-an-intro-to-googles-go-programming-language-aka-golang)
+  - compilado
+  - inspirado en C con garbage collector
+  -  Golang is commonly used for the following applications:
+      Distributed Network Services
+      Cloud-Native Development 
+      Replacements for Existing Infrastructure
+      Utilities and Stand-Alone Tools
+      News Outlets
+      Media Platform
+  - muy backend
+
+D: (https://www.quora.com/What-is-the-usage-of-the-D-programming-language 
+  - general purpose 
+  - rediseño de C++
+  - D combines the performance and safety of compiled languages with the expressive power of modern dynamic and functional programming languages
+  - multiparadigma: oop, imperativo, funcional
+  - games, web apps, gui apps
+  - system programming: operating systems, embedded
+  - Mostly anything one would use C++, Java, Python and other not-in-a-browser languages for.
+  - no tan popular ultimamente
+
+
+GDScript: (https://gdscript.com/ ; https://www.javatpoint.com/godot-introduction-of-gdscript)
+  - alto nivel
+  - Su objetivo es optimizarse e integrarse estrechamente con Godot Engine,
+  - GDScript evolved as a custom scripting language to be used with the Godot computer (and mobile device) Game engine, and for those people who look beyond the real world, it also supports Virtual Reality.
+  - muy relacionado con godot?
+
+Elm:
+  - web apps
+  - puramente funcional
+  - The initial implementation of the Elm compiler targets HTML, CSS, and JavaScript.[11]  (quizas es necesario tener conocimientos previos de front end?)
+  - back-end: Elm does not officially support server-side development. 
+
+Eiffel: 
+  - oop
+  - Eiffel is a good language with some very interesting features, but greed and lack of foresight with its IDEs and compilers have greatly diminished it
+  - el IDE es pago
+  -  provides an open architecture for interfacing with "external" software in any other programming language. It is possible for example to program machine- and operating-system level operations in C.
+  - no me llama particularmente la atencion
+
+
+Mi top 5:
+  - Ruby
+  - Rust
+  - Dart/Typescript
+  - Lua
+
+- Rust (embebidos)
+- Dart/Typescript
+- Ruby
+
+Most Loved vs Dreaded language en stackoverflow: https://insights.stackoverflow.com/survey/2021/#technology-most-loved-dreaded-and-wanted
