@@ -30,5 +30,7 @@
 * [notes app](https://www.youtube.com/watch?v=01YKQmia2Jw)
 * [clon de notion](https://medium.com/swlh/how-to-build-a-text-editor-like-notion-c510aedfdfcc)
 * [web scraper](https://dev.to/caelinsutch/building-a-web-scraper-in-typescript-14l1)
+* [varios proyectos](https://www.geeksforgeeks.org/top-7-nodejs-project-ideas-for-beginners/)
+* [proyecos con nivel de dificultad](https://www.interviewbit.com/blog/node-js-projects/)
 
 ## RUBY
