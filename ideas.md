@@ -14,6 +14,7 @@
   * [portfolio](https://zeyadetman.com/posts/how-i-built-my-portfolio-using-nextjs-typescript-chakraui)
 * [editor de imagenes simple](https://reactjsexample.com/simple-image-editor-built-with-react-mobx-typescript/)
 * [text editor](https://www.smashingmagazine.com/2021/05/building-wysiwyg-editor-javascript-slatejs/)->⭐
+  * <https://github.com/tinymce/tinymce>
 * [web text editor](https://betterprogramming.pub/create-a-custom-web-editor-using-typescript-react-antlr-and-monaco-editor-part-1-2f710c69c18c)
 * [notes app](https://www.youtube.com/watch?v=01YKQmia2Jw) ->⭐
 * [clon de notion](https://medium.com/swlh/how-to-build-a-text-editor-like-notion-c510aedfdfcc)
