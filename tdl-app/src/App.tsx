@@ -30,7 +30,7 @@ function App() {
     {name: 'carrot',
      combinations: {},
     isAvailable: true},
-    {name: 'patato',
+    {name: 'potato',
     combinations: {},
     isAvailable: true},       
     {name: 'tomato soup',
