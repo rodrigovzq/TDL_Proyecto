@@ -1,0 +1,11 @@
+.App {
+  display: flex;
+  width: 550px;
+}
+
+.ingredient {
+  border: solid black 1px;
+  margin: 20px;
+  padding: 7px;
+  width: 120px;
+}
