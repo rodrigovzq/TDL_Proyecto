@@ -1,6 +1,7 @@
-# Source code del proyecto final de Teoría del Lenguaje (95.07)
+# Source code del juego de conica
 
-## Pasos a implementar en la app
+# IMPORTANTE 
+## Antes de realizar el primer npm -start, es necesario hacer un npm i @types/webpack-env -D
 -
 -
 -
