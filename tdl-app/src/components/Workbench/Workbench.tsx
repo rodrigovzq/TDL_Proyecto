@@ -1,6 +1,8 @@
 import React from 'react'
 import {ingredient} from '../Ingredient/Ingredient'
-import Ingredient from '../Ingredient/Ingredient'
+import './Workbench.css'
+
+// const ingredientImages = require.context('../Images', true)
 
 interface Props {
     selectedIngredients: ingredient[]
@@ -8,14 +10,19 @@ interface Props {
 }
 
 function Workbench({selectedIngredients, onClick}: Props) {
-    return (<div className="Workbench">
-        <br></br>
-            You selected {selectedIngredients[0].name}
+    return (
+    <div className="workbench">
+        <div className="workbenchHeader">
+            Workbench
+        </div>
+        <div className="workbenchIng">
+            You selected {selectedIngredients[0].name} 
             {selectedIngredients.length > 1 ? 
-            <> and {selectedIngredients[1].name} &nbsp;
-                <button onClick={() => onClick(selectedIngredients)}>Combine</button>
+            <> and {selectedIngredients[1].name}
+                <button className="combineBtn" onClick={() => onClick(selectedIngredients)}>Combine</button>
                 </> : <></>}
-    </div>)
-}
+        </div>
+    </div>
+    )}
 
 export default Workbench

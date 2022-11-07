@@ -1,5 +1,6 @@
 import React from 'react'
 import Ingredient from '../Ingredient/Ingredient'
+import './Recipes.css'
 
 interface Props {
     recipes: any, // cambiarlo por un array de ingredientes.
@@ -8,14 +9,19 @@ interface Props {
 
 function Recipes({recipes, onClick}: Props) {
     return (
-        <div className="recipesList">
-            {
-            recipes.map((ingredient: any) => (
-                <div className="recipesElement">
-                    <Ingredient ingredient={ingredient} onClick={onClick}/>
-                </div>
-            ))
-            }
+        <div className="recipes">
+            <div className="recipesHeader">
+                Ingredients
+            </div>
+            <div className="recipesList">
+                {
+                recipes.map((ingredient: any) => (
+                    <div className="recipesElement">
+                        <Ingredient ingredient={ingredient} onClick={onClick}/>
+                    </div>
+                ))
+                }
+            </div>
         </div>
     )
 }
