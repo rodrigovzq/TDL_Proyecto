@@ -19,7 +19,7 @@ function Workbench({selectedIngredients, onClick}: Props) {
             <div className="placeholder">
                 Select ingredients to combine them
             </div> : 
-            <div className="workbenchIng">
+            <div className="workbenchContent">
                 <div>You selected</div>
                 <div className="ingredientContainer">
                     <img src={ingredientImages(`./${ selectedIngredients[0].name }.png`)} 

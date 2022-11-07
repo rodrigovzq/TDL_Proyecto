@@ -9,10 +9,6 @@ export interface ingredient {
     isAvailable: boolean
 }
 
-export interface recipe extends ingredient {
-    
-}
-
 interface Props {
     ingredient: ingredient,
     onClick: Function

@@ -4,3 +4,10 @@
     height: 100vh;
 
 }
+
+.App > .kitchenEl {
+    display: flex;
+    flex-direction: column;
+    flex: 0;
+    min-width: 400px;
+}

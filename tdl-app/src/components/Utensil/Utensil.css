@@ -1,4 +1,4 @@
-.ingredient {
+.utensil {
     width: 150px;
     height: 170px;
     display: flex;
@@ -11,20 +11,14 @@
     padding: 7px;
 }
 
-.ingredientImg {
-    margin-top: 10px;
-    width: 100px;
+.utensilImg > img {
+    width: 120px;
     height: 120px;
 }
 
-.ingredient:hover {
+.utensil:hover {
     cursor: pointer;
     border: 3px solid   rgb(161, 215, 182);
     box-shadow: 10px 5px 5px gray;
-}
-
-img {
-    width: 134px;
-    height: 92px;
 }
 

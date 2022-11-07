@@ -4,6 +4,9 @@ import './App.css';
 import Recipes from './components/Recipes/Recipes'
 import {ingredient} from './components/Ingredient/Ingredient';
 import Workbench from './components/Workbench/Workbench';
+import Utensils from './components/Utensils/Utensils'
+import {utensil} from './components/Utensil/Utensil'
+import Menu from './components/Menu/Menu'
 
 
 function App() {
@@ -32,7 +35,10 @@ function App() {
     isAvailable: true},
     {name: 'potato',
     combinations: {},
-    isAvailable: true},       
+    isAvailable: true},
+    {name: 'egg',
+    combinations: {},
+    isAvailable: true},
     {name: 'tomato soup',
      combinations: {'dough': 'pre-pizza'},
      isAvailable: false},
@@ -46,6 +52,16 @@ function App() {
     combinations: {},
     isAvailable: false}
   ])
+  const [selectedUtensil, setSelectedUtensil] = useState({});
+  const [utensils, setUtensils] = useState<utensil[]>([
+    {name: 'oven',
+    combinations: {},
+    },
+    {name: 'pan',
+    combinations: {}},
+    {name: 'pot',
+    combinations: {}}
+  ])
 
   const chooseIngredient = (ingredient: ingredient) => {
     if (selectedIngredients.length < 2) {
@@ -56,6 +72,10 @@ function App() {
       setIngredients([ingredient])
       console.log(selectedIngredients)
     }
+  }
+
+  const chooseUtensil = (utensil: utensil) => {
+    setSelectedUtensil(utensil)
   }
 
   const combineIngredients = (selectedIngredients: ingredient[]) => {
@@ -78,11 +98,16 @@ function App() {
   }
 
   return (
-    <div className="App">
-          <Recipes recipes={recipes} onClick={chooseIngredient}/>
-          <Workbench selectedIngredients={selectedIngredients} onClick={combineIngredients}/> : <></>
+  <div className="App">
+    <div className="kitchenEl">
+        <Recipes recipes={recipes} onClick={chooseIngredient}/>
+        <Utensils utensils={utensils} onClick={chooseUtensil}/>
     </div>
-
+      <Workbench selectedIngredients={selectedIngredients} onClick={combineIngredients}/>
+    <div className="restaurantEl">
+      <Menu menu={[]}/>
+    </div>
+  </div>
   );
 }
 

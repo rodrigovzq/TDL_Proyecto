@@ -22,7 +22,7 @@
     margin-top: 8%;
 }
 
-.workbenchIng {
+.workbenchContent {
     height: 100%;
     display: flex;
     justify-content: space-around;
@@ -41,7 +41,8 @@
 }
 
 .ingredientContainer > img {
-    width: 80px;
+    width: 90px;
+    height: 75px;
 }
 
 .ingredientName {
