@@ -64,18 +64,23 @@ function App() {
     const oldRecipe = recipes.find((ingredient) => (ingredient.name === result))
     if (oldRecipe === undefined) {
       console.log(result)
-      console.log("no combination exists")
-    } else {    
+      alert("no combination exists")
+    } else {
+      if (oldRecipe.isAvailable === true) {
+        alert(`You already discovered ${result}.`)
+        return;
+      }    
       const newRecipe = {...oldRecipe, isAvailable: true}
       const oldRecipes = recipes.filter((ingredient) => (ingredient.name !== result))
       setRecipes([...oldRecipes, newRecipe])
+      alert(`Congrats! You discovered ${result} 👨‍🍳`)
     }
   }
 
   return (
     <div className="App">
           <Recipes recipes={recipes} onClick={chooseIngredient}/>
-          {selectedIngredients.length > 0 ? <Workbench selectedIngredients={selectedIngredients} onClick={combineIngredients}/> : <></> }
+          <Workbench selectedIngredients={selectedIngredients} onClick={combineIngredients}/> : <></>
     </div>
 
   );

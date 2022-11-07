@@ -1,6 +1,10 @@
 .recipes {
     background-color:  rgb(227, 241, 234);
-    border-bottom: 2px solid gray;
+    border-right: 2px solid gray;
+    position: fixed;
+    overflow-y: scroll;
+    top: 0;
+    bottom: 0;
 }
 
 .recipesHeader {
@@ -12,5 +16,5 @@
 
 .recipesList {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
 }

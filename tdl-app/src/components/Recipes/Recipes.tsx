@@ -1,9 +1,10 @@
 import React from 'react'
 import Ingredient from '../Ingredient/Ingredient'
+import {ingredient} from '../Ingredient/Ingredient'
 import './Recipes.css'
 
 interface Props {
-    recipes: any, // cambiarlo por un array de ingredientes.
+    recipes: ingredient[], // cambiarlo por un array de ingredientes.
     onClick: Function
 }
 

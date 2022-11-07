@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 280px;
-    height: 130px;
+    width: 500px;
+    height: 170px;
     margin: auto;
     background-color: rgb(227, 241, 234);
 }
@@ -17,16 +17,40 @@
     background-color:  rgb(191, 215, 200);
 }
 
+.workbench > .placeholder {
+    vertical-align: center;
+    margin-top: 8%;
+}
 
 .workbenchIng {
-    width: 280px;
-    height: 60px;
-    padding: 0px;
-    margin: auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ingredientContainer {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
+    border: 1px solid gray;
+    background-color: white;
+    border-radius: 3px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.ingredientContainer > img {
+    width: 80px;
+}
+
+.ingredientName {
+    padding: 2px;
+}
+
+.btnContainer {
+    height: 80%;
+    display: flex;
 }
 
 .combineBtn {
@@ -34,9 +58,15 @@
     width: 70px;
     height: 25px;
     font-size: 14px;
+    margin-top: 20px;
+    margin: auto;
 }
 
 .combineBtn:hover {
     cursor: pointer;
     background-color: rgb(238, 245, 227);
+}
+
+.ingredientName {
+    font-weight: bold;
 }
