@@ -21,7 +21,7 @@ function Utensil({utensil, onClick} : Props) {
         </div>
 
         <div className="utensilImg" style={{display: 'flex',alignItems: 'center',justifyContent: 'center'}}>
-        <img src={utensilImages(`./${ utensil.name }.jpg`)} alt={`${utensil.name}`}/>
+        <img src={utensilImages(`./${ utensil.name }.png`)} alt={`${utensil.name}`}/>
         </div>
 
         {/* <div style={{display: 'flex',alignItems: 'center',justifyContent: 'center'}}>

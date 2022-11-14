@@ -1,5 +1,5 @@
 .menuContainer {
-    width: 800px;
+    width: 500px;
     height: 100vh;
     background-color:  rgb(227, 241, 234);
     border-left: 2px solid gray;
@@ -15,7 +15,7 @@
 }
 
 .menuContent {
-    height: 90%;
+    height: 30%;
 }
 
 .menuContent > .placeholder {
