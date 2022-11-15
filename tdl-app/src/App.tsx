@@ -249,6 +249,14 @@ function App() {
       alert("no combination exists")
   }
 
+  const cancelUtensil = () => {
+    setSelectedUtensil([])
+  }
+
+  const cancelIngredients = () => {
+    setIngredients([])
+  }
+
   return (
     <div className="App">
       <div className="progress">
@@ -256,8 +264,8 @@ function App() {
       </div>
       <div className="AppContent">
         <div className="kitchenEl">
-          <Utensils utensils={utensils} onClick={chooseUtensil} />
-          <Recipes recipes={recipes.filter((a) => (a.isAvailable))} onClick={chooseIngredient} />
+          <Utensils utensils={utensils} onClick={chooseUtensil} onCancel={cancelUtensil} />
+          <Recipes recipes={recipes.filter((a) => (a.isAvailable))} onClick={chooseIngredient} onCancel={cancelIngredients}/>
         </div>
         <div className="workbenchEl">
           <Workbench selectedUtensil={selectedUtensil} selectedIngredients={selectedIngredients} onClick={combineIngredients} />

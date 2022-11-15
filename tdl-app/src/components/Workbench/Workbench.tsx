@@ -5,6 +5,7 @@ import './Workbench.css'
 
 const ingredientImages = require.context('../Images', true)
 const utensilImages = require.context('../Images', true)
+const kitchenImage = require('./Kitchen.png')
 
 interface Props {
     selectedUtensil: utensil[]
@@ -17,6 +18,9 @@ function Workbench({selectedUtensil, selectedIngredients, onClick}: Props) {
     <div className="workbench">
         <div className="workbenchHeader">
             Kitchen
+        </div>
+        <div className="kitchen">
+                <img className="kitchenImg" src={kitchenImage}/>
         </div>
         { selectedUtensil.length === 0 ? 
             <div className="placeholder">

@@ -10,16 +10,17 @@ const instructionsBtn = require("../../button-images/book.png")
 
 interface Props {
     recipes: ingredient[], // cambiarlo por un array de ingredientes.
-    onClick: Function
+    onClick: Function,
+    onCancel: Function
 }
 
-function Recipes({recipes, onClick}: Props) {
+function Recipes({recipes, onClick, onCancel}: Props) {
     return (
         <div className="recipes">
             <div className="recipesHeader">
                 <div className="recipesHeaderText">Ingredients</div>
                 <div className="actionsContainer">
-                    <button className="cancel"> <img src={cancelBtn}/></button>
+                    <button className="cancel" onClick={() => onCancel()}> <img src={cancelBtn}/></button>
                     <div className="instructions"> 
                         <img src={instructionsBtn}/>
                         <ul className="instructionsList">

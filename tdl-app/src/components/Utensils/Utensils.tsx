@@ -5,7 +5,8 @@ import Utensil from '../Utensil/Utensil'
 
 interface Props {
     utensils: utensil[], // cambiarlo por un array de ingredientes.
-    onClick: Function
+    onClick: Function,
+    onCancel: Function
 }
 
 const cancelBtn = require("../../button-images/cancel.png")
@@ -13,13 +14,13 @@ const instructionsBtn = require("../../button-images/book.png")
 const bullet = require('../../button-images/light-bulb.png')
 const utensilsImages = require.context("../Images", true)
 
-function Utensils({utensils, onClick} : Props) {
+function Utensils({utensils, onClick, onCancel} : Props) {
     return (
         <div className="utensils">
             <div className="utensilsHeader">
             <div className="recipesHeaderText">Utensils</div>
             <div className="actionsContainer">
-                <button className="cancel"> <img src={cancelBtn}/></button>
+                <button className="cancel" onClick={() => onCancel()}> <img src={cancelBtn}/></button>
                 <div className="instructions"> 
                     <img src={instructionsBtn}/>
                     <ul className="instructionsList">
