@@ -6,6 +6,7 @@ const utensilImages = require.context('../Images', true)
 export interface utensil {
     name: string,
     combinations: string[][]
+    action: string,
 }
 
 interface Props {

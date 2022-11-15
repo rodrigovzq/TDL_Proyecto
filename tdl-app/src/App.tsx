@@ -173,16 +173,19 @@ function App() {
     {
       name: 'oven',
       combinations: [['tomato-sauce','dough', 'pre-pizza'],
-                    ['cheese','pre-pizza', 'pizza-simple']]
+                    ['cheese','pre-pizza', 'pizza-simple']],
+      action: 'bake'
     },
     {
       name: 'pan',
       combinations: [['egg','','fried-egg'],
-                    ['potato', '', 'french-fries']]
+                    ['potato', '', 'french-fries']],
+      action: 'fry or grill'
     },
     {
       name: 'pot',
-      combinations: []
+      combinations: [],
+      action: 'boil'
     },
     {
       name: 'bowl',
@@ -194,7 +197,8 @@ function App() {
                      ['fruit', 'milk', 'smoothie'],
                      ['glass-of-water','fruit', 'juice'], 
                      ['glass-of-water','sugar', 'soda'],
-                    ]
+                    ],
+      action: 'combine'
     }
   ])
 
@@ -252,8 +256,8 @@ function App() {
       </div>
       <div className="AppContent">
         <div className="kitchenEl">
-          <Recipes recipes={recipes.filter((a) => (a.isAvailable))} onClick={chooseIngredient} />
           <Utensils utensils={utensils} onClick={chooseUtensil} />
+          <Recipes recipes={recipes.filter((a) => (a.isAvailable))} onClick={chooseIngredient} />
         </div>
         <div className="workbenchEl">
           <Workbench selectedUtensil={selectedUtensil} selectedIngredients={selectedIngredients} onClick={combineIngredients} />

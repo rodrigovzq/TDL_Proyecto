@@ -26,3 +26,93 @@
     flex-grow: 1;
     width: 400px;
 }
+
+
+
+
+
+/* INSTRUCTIONS and CLEAR*/
+
+.actionsContainer {
+    width: 50px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cancel, .instructions {
+    border: none;
+    background-color: transparent;
+}
+
+.cancel:hover, .instructions:hover {
+    cursor: pointer;
+}
+
+.cancel > img, .instructions > img {
+    width: 20px;
+    height: 20px;
+}
+
+.cancel > img:hover, .instructions:hover {
+    filter: drop-shadow(1px 1px 0 rgb(165, 164, 164)) 
+    drop-shadow(-1px -1px 0 rgb(165, 164, 164))
+    drop-shadow(1px -1px 0 rgb(165, 164, 164))
+    drop-shadow(-1px 1px 0 rgb(165, 164, 164));
+}
+
+.instructions:hover .instructionsList {
+    display: flex;
+    flex-direction: column;
+
+
+    background: rgb(227, 241, 234);
+    border: 1px solid white;
+    width: 180px;
+    border-radius: 5px;
+    padding-top: 5px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+
+    z-index: 1;
+
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.instructionsList {
+    display: none;
+}
+
+.instructionsList li {
+    border-bottom: 1px solid #FFF;
+
+    padding: 0 5px 10px 5px;
+    margin-top: 3px;
+    list-style: none;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.instructionText {
+    margin-left: 10px;
+    vertical-align: top;
+}
+
+.bullet {
+    width: 25px;
+    height: 25px;
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+    vertical-align: bottom;
+}
+
+.instructionsList li:last-of-type {
+    border-bottom: none;
+}

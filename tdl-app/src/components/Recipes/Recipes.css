@@ -9,6 +9,9 @@
     font-weight: bold;
     padding: 10px;
     background-color: rgb(191, 215, 200);
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
 }
 
 .recipesList {

@@ -11,7 +11,7 @@ function Menu({menu}: Props) {
     return (
         <div className="menuContainer">
             <div className="menuHeader">
-                Menu
+                <div className="menuHeaderText">Menu</div>
             </div>
             <div className="menuContent">
                 {menu.length === 0 ? 
