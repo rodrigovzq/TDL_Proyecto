@@ -220,6 +220,10 @@ function App() {
   }
 
   const combineIngredients = (selectedIngredients: ingredient[]) => {
+    if (selectedIngredients.length===0) {
+      alert(`at least one ingredient must be selected.`)
+      return;
+    }
     const combinations = selectedUtensil[0].combinations;
     const selectedIngNames = [...selectedIngredients.map( (a) => a.name), '']
 

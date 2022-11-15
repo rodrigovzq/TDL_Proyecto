@@ -1,5 +1,5 @@
 import React from 'react'
-import {utensil} from '../Utensil/Utensil'
+import Utensil, { utensil} from '../Utensil/Utensil'
 import {ingredient} from '../Ingredient/Ingredient'
 import './Workbench.css'
 
@@ -14,45 +14,40 @@ interface Props {
 }
 
 function Workbench({selectedUtensil, selectedIngredients, onClick}: Props) {
+
     return (
     <div className="workbench">
         <div className="workbenchHeader">
             Kitchen
         </div>
         <div className="kitchen">
-                <img className="kitchenImg" src={kitchenImage}/>
-        </div>
-        { selectedUtensil.length === 0 ? 
+            <img className="kitchenImg" src={kitchenImage}/>
+            { selectedUtensil.length === 0 ? 
             <div className="placeholder">
-                Select a utensil
-            </div> : 
-        <div className="workbenchContent">
-            <div>You selected</div>
-            <div className="utensilContainer">
-                <img src={utensilImages(`./${ selectedUtensil[0].name }.png`)} 
-                    alt={`${selectedUtensil[0].name}`}/> 
-                <span className="utensilName">{selectedUtensil[0].name}</span>
-            </div>
-            {selectedIngredients.length !== 0 ? 
-            <> and
-            <div className="ingredientContainer">
-                <img src={ingredientImages(`./${ selectedIngredients[0].name }.png`)} 
-                    alt={`${selectedIngredients[0].name}`}/> 
-                <span className="ingredientName">{selectedIngredients[0].name}</span>
+                <div>Select a utensil</div>
+                <div className="placeholderForm">
                 </div>
-                </> : <>Select Ingredients</>}
-            {selectedIngredients.length > 1 ? 
-            <> and 
-            <div className="ingredientContainer">
-                <img src={ingredientImages(`./${ selectedIngredients[1].name }.png`)} 
-                    alt={`${selectedIngredients[1].name}`}/> 
-                <span className="ingredientName">{selectedIngredients[1].name}</span>
-            </div></> : <></>}
-            {selectedIngredients.length != 0?
-            <div className="btnContainer">
-            <button className="combineBtn" onClick={() => onClick(selectedIngredients)}>Combine</button>
-            </div> : <></>}        
-        </div>}
+            </div> : 
+            <div className="workbenchContent">
+                    {selectedIngredients.length === 0? 
+                        <div className='placeholder'>select Ingredients</div> : <></>}
+                    <div className='ingredientsContainer'>
+                        <div className='ingredientImgContainer'>
+                            {selectedIngredients.length > 0 ?
+                                <img className="ingredientImg" 
+                                    src={ingredientImages(`./${ selectedIngredients[0].name }.png`)} 
+                                    alt={`${selectedIngredients[0].name}`}/> : <></>}
+                        </div>
+                        <div className='ingredientImgContainer'>
+                            {selectedIngredients.length > 1 ?
+                                <img className="ingredientImg" 
+                                    src={ingredientImages(`./${ selectedIngredients[1].name }.png`)} 
+                                    alt={`${selectedIngredients[1].name}`}/> : <></>}
+                        </div>
+                    </div>
+                    <Utensil utensil={selectedUtensil[0]} onClick={() => onClick(selectedIngredients)}/>
+            </div>}
+        </div>
         <div className="Instructions">
 
         </div>

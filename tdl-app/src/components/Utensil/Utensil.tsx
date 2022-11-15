@@ -17,7 +17,7 @@ interface Props {
 function Utensil({utensil, onClick} : Props) {
     return (
     <button className="utensil" onClick={() => onClick(utensil)}>
-        <div style={{display: 'flex',alignItems: 'center',justifyContent: 'center'}}>
+        <div style={{display: 'flex',alignItems: 'center',justifyContent: 'center'}} className="utensilName">
         <span>{utensil.name.charAt(0).toUpperCase() +  utensil.name.slice(1)}</span>
         </div>
 
