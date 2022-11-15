@@ -44,16 +44,16 @@ function App() {
     },
     {
       name: "water",
-      combinations: { 'flour': 'dough', 'tomato': 'tomato soup' },
+      combinations: { 'flour': 'dough', 'tomato': 'tomato-sauce' },
       isAvailable: true
     },
     {
       name: 'tomato',
-      combinations: { 'water': 'tomato soup' },
+      combinations: { 'water': 'tomato-sauce' },
       isAvailable: true
     },
     {
-      name: 'chesse',
+      name: 'cheese',
       combinations: { 'pre-pizza': 'pizza-simple' },
       isAvailable: true
     },
@@ -83,18 +83,18 @@ function App() {
       isAvailable: true
     },
     {
-      name: 'tomato soup',
+      name: 'tomato-sauce',
       combinations: { 'dough': 'pre-pizza' },
       isAvailable: false
     },
     {
       name: 'dough',
-      combinations: { 'tomato soup': 'pre-pizza' },
+      combinations: { 'tomato-sauce': 'pre-pizza' },
       isAvailable: false
     },
     {
       name: 'pre-pizza',
-      combinations: { 'chesse': 'pizza-simple' },
+      combinations: { 'cheese': 'pizza-simple' },
       isAvailable: false
     },
     {
