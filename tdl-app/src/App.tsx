@@ -14,8 +14,28 @@ function App() {
   const [recipes, setRecipes] = useState<ingredient[]>([
     {
       name: 'fruit',
+      combinations: { 'sugar': 'fruit-salad', 'water': 'juice' },
+      isAvailable: true
+    },
+    {
+      name: 'milk',
       combinations: {},
       isAvailable: true
+    },
+    {
+      name: 'juice',
+      combinations: { 'milk': 'smoothie' },
+      isAvailable: false
+    },
+    {
+      name: 'smoothie',
+      combinations: {},
+      isAvailable: false
+    },
+    {
+      name: 'soda',
+      combinations: {},
+      isAvailable: false
     },
     {
       name: 'lettuce',
@@ -44,8 +64,13 @@ function App() {
     },
     {
       name: "water",
-      combinations: { 'flour': 'dough', 'tomato': 'tomato-sauce' },
+      combinations: { 'flour': 'dough', 'tomato': 'tomato-sauce', 'water': 'glass-of-water' },
       isAvailable: true
+    },
+    {
+      name: 'glass-of-water',
+      combinations: { 'fruit': 'juice', 'sugar': 'soda' },
+      isAvailable: false
     },
     {
       name: 'tomato',
