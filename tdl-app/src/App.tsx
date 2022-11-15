@@ -18,119 +18,153 @@ function App() {
   const [recipes, setRecipes] = useState<ingredient[]>([
     {
       name: 'baked-potato',
-      isAvailable: false
+      isAvailable: false,
+      isInMenu: false,
     },
     {
       name: 'batter',
-      isAvailable: false
+      isAvailable: false,
+      isInMenu: false,
     },
     {
       name: 'boiled-egg',
-      isAvailable: false
+      isAvailable: false,
+      isInMenu: false,
     },
     {
       name: 'bread',
-      isAvailable: false
+      isAvailable: false,
+      isInMenu: true,
     },
     {
       name: 'burger',
-      isAvailable: false
+      isAvailable: false,
+      isInMenu: false,
     },
     {
       name: 'carrot',
-      isAvailable: true
+      isAvailable: true,
+      isInMenu: false,
     },
     {
       name: 'cheese',
-      isAvailable: true
+      isAvailable: true,
+      isInMenu: false,
     },
     {
       name: 'dough',
-      isAvailable: false
+      isAvailable: false,
+      isInMenu: false,
     },
     {
       name: 'egg',
-      isAvailable: true
+      isAvailable: true,
+      isInMenu: false,
     },
     {
       name: "flour",
-      isAvailable: true
+      isAvailable: true,
+      isInMenu: false,
+    },
+    {
+      name: 'french-fries',
+      isAvailable: false,
+      isInMenu: true,
     },
     {
       name: 'fried-egg',
-      isAvailable: false
+      isAvailable: false,
+      isInMenu: false,
     },
     {
       name: 'fruit',
-      isAvailable: true
+      isAvailable: true,
+      isInMenu: false,
     },
     {
       name: 'fruit-salad',
-      isAvailable: false
+      isAvailable: false,
+      isInMenu: false,
     },
     {
       name: 'garlic',
-      isAvailable: true
+      isAvailable: true,
+      isInMenu: false,
     },
     {
       name: 'glass-of-water',
-      isAvailable: false
+      isAvailable: false,
+      isInMenu: false,
     },
     {
       name: 'juice',
-      isAvailable: false
+      isAvailable: false,
+      isInMenu: false,
     },
     {
       name: 'lettuce',
-      isAvailable: true
+      isAvailable: true,
+      isInMenu: false,
     },
     {
       name: 'meat',
-      isAvailable: true
+      isAvailable: true,
+      isInMenu: false,
     },
     {
       name: 'milk',
-      isAvailable: true
+      isAvailable: true,
+      isInMenu: false,
     },
     {
       name: 'onion',
-      isAvailable: true
+      isAvailable: true,
+      isInMenu: false,
     },
     {
       name: 'smoothie',
-      isAvailable: false
+      isAvailable: false,
+      isInMenu: true,
     },
     {
       name: 'soda',
-      isAvailable: false
+      isAvailable: false,
+      isInMenu: false,
     },
     {
       name: 'pizza-simple',
-      isAvailable: false
+      isAvailable: false,
+      isInMenu: true,
     },
     {
       name: 'potato',
-      isAvailable: true
+      isAvailable: true,
+      isInMenu: false,
     },
     {
       name: 'pre-pizza',
-      isAvailable: false
+      isAvailable: false,
+      isInMenu: false,
     },
     {
       name: 'sugar',
-      isAvailable: true
+      isAvailable: true,
+      isInMenu: false,
     },
     {
       name: 'tomato',
-      isAvailable: true
+      isAvailable: true,
+      isInMenu: false,
     },
     {
       name: 'tomato-sauce',
-      isAvailable: false
+      isAvailable: false,
+      isInMenu: false,
     },
     {
       name: "water",
-      isAvailable: true
+      isAvailable: true,
+      isInMenu: false,
     }
   ])
 
@@ -143,7 +177,8 @@ function App() {
     },
     {
       name: 'pan',
-      combinations: [['egg','','fried-egg']]
+      combinations: [['egg','','fried-egg'],
+                    ['potato', '', 'french-fries']]
     },
     {
       name: 'pot',
@@ -156,8 +191,9 @@ function App() {
                      ['water','water', 'glass-of-water'],
                      ['fruit','sugar', 'fruit-salad'],
                      ['fruit','water', 'juice'],
+                     ['fruit', 'milk', 'smoothie'],
                      ['glass-of-water','fruit', 'juice'], 
-                     ['glass-of-water','sugar', 'soda']
+                     ['glass-of-water','sugar', 'soda'],
                     ]
     }
   ])
@@ -211,13 +247,20 @@ function App() {
 
   return (
     <div className="App">
-      <div className="kitchenEl">
-        <Recipes recipes={recipes} onClick={chooseIngredient} />
-        <Utensils utensils={utensils} onClick={chooseUtensil} />
+      <div className="progress">
+        Recipes Found
       </div>
-      <Workbench selectedUtensil={selectedUtensil} selectedIngredients={selectedIngredients} onClick={combineIngredients} />
-      <div className="restaurantEl">
-        <Menu menu={[]} />
+      <div className="AppContent">
+        <div className="kitchenEl">
+          <Recipes recipes={recipes.filter((a) => (a.isAvailable))} onClick={chooseIngredient} />
+          <Utensils utensils={utensils} onClick={chooseUtensil} />
+        </div>
+        <div className="workbenchEl">
+          <Workbench selectedUtensil={selectedUtensil} selectedIngredients={selectedIngredients} onClick={combineIngredients} />
+        </div>
+        <div className="restaurantEl">
+          <Menu menu={recipes.filter((a) => (a.isInMenu && a.isAvailable))} />
+        </div>
       </div>
     </div>
   );

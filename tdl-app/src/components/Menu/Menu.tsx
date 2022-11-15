@@ -1,12 +1,10 @@
 import React from 'react'
 import './Menu.css'
+import Ingredient, {ingredient} from '../Ingredient/Ingredient'
 
-export interface menu {
-
-}
 
 interface Props {
-    menu: menu[]
+    menu: ingredient[]
 }
 
 function Menu({menu}: Props) {
@@ -19,9 +17,9 @@ function Menu({menu}: Props) {
                 {menu.length === 0 ? 
                 <div className="placeholder">
                     There are no items available yet
-                </div> :
-                // @todo:  show menu elements
-                <></>} 
+                </div> :<>
+                {menu.map((recipe) =><Ingredient ingredient={recipe} onClick={() => {}}/>)}
+                </>} 
             </div>
         </div>
 )}

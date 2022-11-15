@@ -16,7 +16,7 @@ function Workbench({selectedUtensil, selectedIngredients, onClick}: Props) {
     return (
     <div className="workbench">
         <div className="workbenchHeader">
-            Workbench
+            Kitchen
         </div>
         { selectedUtensil.length === 0 ? 
             <div className="placeholder">

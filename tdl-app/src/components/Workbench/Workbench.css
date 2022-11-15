@@ -1,16 +1,21 @@
 .workbench {
+    flex-grow: 100;
+    vertical-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 620px;
-    height: 170px;
     margin: auto;
     background-color: rgb(227, 241, 234);
+    /* background-image: url('Kitchen.png');
+    background-size: contain;
+    background-repeat: no-repeat; */
+    width: 120vh;
+    height: 100%;
 }
 
 .workbenchHeader {
     width: 100%;
-    font-size: 17px;
+    font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
     padding: 7px;

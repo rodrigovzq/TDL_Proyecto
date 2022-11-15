@@ -1,13 +1,28 @@
 .App {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    width: 100%;
     height: 100vh;
-
 }
 
-.App > .kitchenEl {
+.AppContent {
+    display: flex;
+    flex-direction: row;
+    height: 98vh;
+    max-width: 100%;
+}
+
+.AppContent > .kitchenEl {
     display: flex;
     flex-direction: column;
-    flex: 0;
-    min-width: 400px;
+    flex-shrink: 0.5;
+    flex-grow: 0;
+    width: 400px;
+}
+
+.AppContent > .restaurantEl {
+    display: flex;
+    flex-shrink: 2;
+    flex-grow: 1;
+    width: 400px;
 }
