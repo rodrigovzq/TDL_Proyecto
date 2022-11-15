@@ -21,7 +21,7 @@ function Workbench({selectedUtensil, selectedIngredients, onClick}: Props) {
             Kitchen
         </div>
         <div className="kitchen">
-            <img className="kitchenImg" src={kitchenImage}/>
+            {/* <img className="kitchenImg" src={kitchenImage}/> */}
             { selectedUtensil.length === 0 ? 
             <div className="placeholder">
                 <div>Select a utensil</div>

@@ -8,6 +8,11 @@
     background-color: rgb(227, 241, 234);
     width: 1000px;
     height: 100%;
+    overflow-y: auto;
+
+
+    position: relative;
+    z-index: 0;
 }
 
 .workbenchHeader {
@@ -20,10 +25,14 @@
 }
 
 .kitchen {
-    position: relative;
-    z-index: 2;
+    position: absolute;
+    top: 5%;
     width: 1000px;
-    height: 550px;
+    height: 562px;
+    background-image: url('./Kitchen.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 1px solid red;
 }
 
 .kitchen > .placeholder {
@@ -43,7 +52,7 @@
     width: 200px;
     height: 200px;
     border: 3px dashed rgb(188, 186, 186);
-    z-index: 3;
+    z-index: 1;
     border-radius: 5px;
 
 }
@@ -58,7 +67,7 @@
     position: absolute;
     right: 5%;
     bottom: 43%;
-    z-index: 3;
+    z-index: 0;
 }
 
 .workbenchContent > .placeholder {
@@ -71,10 +80,7 @@
     text-align: center;
 }
 
-.kitchenImg {
-    width: 100%;
-    height: 100%;
-}
+
 
 
 .utensilContainer {
@@ -86,6 +92,10 @@
     border-radius: 3px;
     margin-left: 20px;
     margin-right: 20px;
+
+    position: relative;
+    border: 1px solid red;
+    z-index: 5;
 }
 
 .utensilContainer > img {
