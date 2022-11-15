@@ -1,0 +1,25 @@
+.menuContainer {
+    width: 500px;
+    height: 100vh;
+    background-color:  rgb(227, 241, 234);
+    border-left: 2px solid gray;
+}
+
+.menuHeader {
+    width: 100%;
+    background-color: rgb(191, 215, 200);
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 7px;
+}
+
+.menuContent {
+    height: 30%;
+}
+
+.menuContent > .placeholder {
+    width: 250px;
+    vertical-align: center;
+    margin: auto;
+}
