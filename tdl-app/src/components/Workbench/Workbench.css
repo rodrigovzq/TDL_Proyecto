@@ -41,6 +41,7 @@
 }
 
 .utensilContainer > img {
+    margin-top: 5px;
     width: 90px;
     height: 75px;
 }

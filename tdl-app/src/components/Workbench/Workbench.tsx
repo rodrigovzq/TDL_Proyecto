@@ -36,18 +36,19 @@ function Workbench({selectedUtensil, selectedIngredients, onClick}: Props) {
                         alt={`${selectedIngredients[0].name}`}/> 
                     <span className="ingredientName">{selectedIngredients[0].name}</span>
                  </div>
-                 </> : <></>}
+                 </> : <>Select Ingredients</>}
                 {selectedIngredients.length > 1 ? 
                 <> and 
                 <div className="ingredientContainer">
                     <img src={ingredientImages(`./${ selectedIngredients[1].name }.png`)} 
                         alt={`${selectedIngredients[1].name}`}/> 
                     <span className="ingredientName">{selectedIngredients[1].name}</span>
-                </div>
+                </div></> : <></>}
+                {selectedIngredients.length != 0?
                 <div className="btnContainer">
                 <button className="combineBtn" onClick={() => onClick(selectedIngredients)}>Combine</button>
-                </div>
-                </> : <></>}
+                </div> : <></>}
+                
             </div>
         }
     </div>

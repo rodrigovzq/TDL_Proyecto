@@ -8,6 +8,10 @@ import Utensils from './components/Utensils/Utensils'
 import Utensil, { utensil } from './components/Utensil/Utensil'
 import Menu from './components/Menu/Menu'
 
+const emptyIngredient = {
+  name: '',
+  isAvaialable: false
+}
 
 function App() {
   const [selectedIngredients, setIngredients] = useState<ingredient[]>([]);
@@ -139,7 +143,7 @@ function App() {
     },
     {
       name: 'pan',
-      combinations: [['egg','egg','fried-egg']]
+      combinations: [['egg','','fried-egg']]
     },
     {
       name: 'pot',
@@ -171,38 +175,38 @@ function App() {
 
   const chooseUtensil = (utensil: utensil) => {
     setSelectedUtensil([utensil])
+    setIngredients([])
     console.log(selectedUtensil)
   }
 
   const combineIngredients = (selectedIngredients: ingredient[]) => {
-  const combinations = selectedUtensil[0].combinations;
+    const combinations = selectedUtensil[0].combinations;
+    const selectedIngNames = [...selectedIngredients.map( (a) => a.name), '']
 
-  let index = -1
-  for (var i=0, len=combinations.length; i<len; i++)
-  {
-      if ((combinations[i][0] === selectedIngredients[0].name && combinations[i][1] === selectedIngredients[1].name) ||
-          (combinations[i][0] === selectedIngredients[1].name && combinations[i][1] === selectedIngredients[0].name )) 
-        index = i
-  }
+    const result = combinations.find((value) => (
+      (value[0] === selectedIngNames[0] && value[1] === selectedIngNames[1])  ||
+            (value[0] === selectedIngNames[1] && value[1] === selectedIngNames[0])
+    ))
+    console.log(result)
 
-  if(index !==-1){
-    const result = combinations[index][2]
-    const oldRecipe = recipes.find((ingredient) => (ingredient.name === result))
-    if (oldRecipe === undefined) {
-      alert("no combination exists")
-    } else {
-      if (oldRecipe.isAvailable === true) {
-        alert(`You already discovered ${result}.`)
-        return;
+    if(result !== undefined){
+      const resultName = result[2]
+      const oldRecipe = recipes.find((ingredient) => (ingredient.name === resultName))
+      if (oldRecipe === undefined) {
+        alert("no combination exists")
+      } else {
+        if (oldRecipe.isAvailable === true) {
+          alert(`You already discovered ${resultName}.`)
+          return;
+        }
+        const newRecipe = { ...oldRecipe, isAvailable: true }
+        const oldRecipes = recipes.filter((ingredient) => (ingredient.name !== resultName))
+        setRecipes([...oldRecipes, newRecipe])
+        alert(`Congrats! You discovered ${resultName} 👨‍🍳`)
       }
-      const newRecipe = { ...oldRecipe, isAvailable: true }
-      const oldRecipes = recipes.filter((ingredient) => (ingredient.name !== result))
-      setRecipes([...oldRecipes, newRecipe])
-      alert(`Congrats! You discovered ${result} 👨‍🍳`)
     }
-  }
-  else 
-    alert("no combination exists")
+    else 
+      alert("no combination exists")
   }
 
   return (
