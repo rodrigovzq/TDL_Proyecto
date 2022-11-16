@@ -48,6 +48,8 @@
 
 .cancel:hover, .instructions:hover {
     cursor: pointer;
+    position: relative;
+    z-index: 2;
 }
 
 .cancel > img, .instructions > img {
@@ -62,7 +64,7 @@
     drop-shadow(-1px 1px 0 rgb(165, 164, 164));
 }
 
-.instructions:hover .instructionsList {
+.instructions:hover > .instructionsList {
     display: flex;
     flex-direction: column;
 
@@ -73,7 +75,7 @@
     border-radius: 5px;
     padding-top: 5px;
     position: absolute;
-    z-index: 100;
+    z-index: 2;
     top: 15px;
     left: 15px;
     font-size: 12px;
