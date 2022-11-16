@@ -25,10 +25,6 @@ function Workbench({selectedUtensil, selectedIngredients, recipes, onClick}: Pro
         </div>
         <div className="kitchen">
             {/* <img className="kitchenImg" src={kitchenImage}/> */}
-            <div className="recipesCupboard">
-                <Door />
-                <Recipes recipes={recipes} onClick={() => {}} onCancel={()=> {}}/>
-            </div>
             { selectedUtensil.length === 0 ? 
             <div className="placeholder">
                 <div>Select a utensil</div>
