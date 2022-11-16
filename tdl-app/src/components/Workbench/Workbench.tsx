@@ -1,6 +1,8 @@
 import React from 'react'
 import Utensil, { utensil} from '../Utensil/Utensil'
 import {ingredient} from '../Ingredient/Ingredient'
+import Door from '../Door/Door'
+import Recipes from '../Recipes/Recipes'
 import './Workbench.css'
 
 const ingredientImages = require.context('../Images', true)
@@ -10,10 +12,11 @@ const kitchenImage = require('./Kitchen.png')
 interface Props {
     selectedUtensil: utensil[]
     selectedIngredients: ingredient[]
+    recipes: ingredient[]
     onClick: Function
 }
 
-function Workbench({selectedUtensil, selectedIngredients, onClick}: Props) {
+function Workbench({selectedUtensil, selectedIngredients, recipes, onClick}: Props) {
 
     return (
     <div className="workbench">
@@ -22,6 +25,10 @@ function Workbench({selectedUtensil, selectedIngredients, onClick}: Props) {
         </div>
         <div className="kitchen">
             {/* <img className="kitchenImg" src={kitchenImage}/> */}
+            <div className="recipesCupboard">
+                <Door />
+                <Recipes recipes={recipes} onClick={() => {}} onCancel={()=> {}}/>
+            </div>
             { selectedUtensil.length === 0 ? 
             <div className="placeholder">
                 <div>Select a utensil</div>

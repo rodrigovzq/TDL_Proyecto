@@ -1,0 +1,30 @@
+.door{
+    width: 310px;
+    height: 320px;
+    border: none;
+    position: absolute;
+    z-index: 5;
+    background-color: rgb(221, 159, 116);
+    transition-property: width;
+    transition-duration: 1s;
+}
+
+.door:hover {
+    border-top: 3px solid rgb(234, 190, 158);
+    border-bottom: 3px solid rgb(234, 190, 158);
+    border-right: 3px solid rgb(234, 190, 158);
+    cursor: pointer;
+}
+
+.door.open {
+    width: 45px;
+    height: 320px;
+}
+
+.handle {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    top: 45%;
+}

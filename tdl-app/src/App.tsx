@@ -272,7 +272,10 @@ function App() {
           <Recipes recipes={recipes.filter((a) => (a.isAvailable))} onClick={chooseIngredient} onCancel={cancelIngredients}/>
         </div>
         <div className="workbenchEl">
-          <Workbench selectedUtensil={selectedUtensil} selectedIngredients={selectedIngredients} onClick={combineIngredients} />
+          <Workbench selectedUtensil={selectedUtensil} 
+                     selectedIngredients={selectedIngredients} 
+                     onClick={combineIngredients}
+                     recipes={recipes.filter((a) => (a.isAvailable))} />
         </div>
         <div className="restaurantEl">
           <Menu menu={recipes.filter((a) => (a.isInMenu && a.isAvailable))} />
