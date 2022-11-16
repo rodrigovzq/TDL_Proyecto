@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Satisfy');
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash');
+
 * {
   margin: 0px;
   padding: 0px;
@@ -22,3 +25,9 @@ code {
   font-family: "Cream Cake";
   src: url('./Cream-Cake.otf');
 }
+
+
+@font-face {
+  font-family: "learning-curve";
+  src: url("./webfontkit/learning_curve_regular_ot_tt-webfont.woff") format("woff"),
+  }
