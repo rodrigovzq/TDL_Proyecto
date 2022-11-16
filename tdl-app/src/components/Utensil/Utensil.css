@@ -1,6 +1,6 @@
 .utensil {
-    width: 150px;
-    height: 170px;
+    width: 105px;
+    height: 125px;
     display: flex;
     flex-direction: column;
     align-items: center;

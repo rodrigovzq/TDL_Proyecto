@@ -7,6 +7,7 @@ import Workbench from './components/Workbench/Workbench';
 import Utensils from './components/Utensils/Utensils'
 import Utensil, { utensil } from './components/Utensil/Utensil'
 import Menu from './components/Menu/Menu'
+import Welcome from './components/Welcome/Welcome'
 
 const emptyIngredient = {
   name: '',
@@ -19,7 +20,7 @@ function App() {
     {
       name: 'baked-potato',
       isAvailable: false,
-      isInMenu: false,
+      isInMenu: true,
     },
     {
       name: 'batter',
@@ -84,7 +85,7 @@ function App() {
     {
       name: 'fruit-salad',
       isAvailable: false,
-      isInMenu: false,
+      isInMenu: true,
     },
     {
       name: 'garlic',
@@ -99,7 +100,7 @@ function App() {
     {
       name: 'juice',
       isAvailable: false,
-      isInMenu: false,
+      isInMenu: true,
     },
     {
       name: 'lettuce',
@@ -129,7 +130,7 @@ function App() {
     {
       name: 'soda',
       isAvailable: false,
-      isInMenu: false,
+      isInMenu: true,
     },
     {
       name: 'pizza-simple',
@@ -173,7 +174,8 @@ function App() {
     {
       name: 'oven',
       combinations: [['tomato-sauce','dough', 'pre-pizza'],
-                    ['cheese','pre-pizza', 'pizza-simple']],
+                    ['cheese','pre-pizza', 'pizza-simple'],
+                    ['potato', '', 'baked-potato']],
       action: 'bake'
     },
     {
@@ -263,19 +265,22 @@ function App() {
 
   return (
     <div className="App">
+      <Welcome />
+      <div className="AppName">Little Restaurant</div>
       <div className="progress">
         Recipes Found
       </div>
       <div className="AppContent">
-        <div className="kitchenEl">
-          <Utensils utensils={utensils} onClick={chooseUtensil} onCancel={cancelUtensil} />
-          <Recipes recipes={recipes.filter((a) => (a.isAvailable))} onClick={chooseIngredient} onCancel={cancelIngredients}/>
-        </div>
         <div className="workbenchEl">
           <Workbench selectedUtensil={selectedUtensil} 
                      selectedIngredients={selectedIngredients} 
-                     onClick={combineIngredients}
-                     recipes={recipes.filter((a) => (a.isAvailable))} />
+                     recipes={recipes.filter((a) => (a.isAvailable))}
+                     utensils={utensils}
+                     onChooseIngredient={chooseIngredient}
+                     onChooseUtensil={chooseUtensil}
+                     onCombine={combineIngredients}
+                     onCancelIngredients={cancelIngredients}
+                     onCancelUtensils={cancelUtensil}/>
         </div>
         <div className="restaurantEl">
           <Menu menu={recipes.filter((a) => (a.isInMenu && a.isAvailable))} />

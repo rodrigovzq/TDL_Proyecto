@@ -9,6 +9,7 @@ function Door () {
 
     const onClick = () => {
         setChecked(!isChecked)
+        console.log(isChecked)
     }
 
     return (

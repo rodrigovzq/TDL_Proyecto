@@ -1,9 +1,10 @@
 .ingredient {
-    width: 80px;
-    height: 100px;
+    width: 105px;
+    height: 126px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     border: solid black 1px;
     border-radius: 6px;
     background-color: white;
@@ -11,8 +12,9 @@
     padding: 7px;
 }
 
-.ingredientImg {
-    margin-top: 20px;
+.ingImgContainer {
+    margin-bottom: 1px;
+    vertical-align: bottom;
     width: 70px;
     height: 70px;
 }

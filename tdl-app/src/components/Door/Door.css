@@ -1,24 +1,24 @@
 .door{
-    width: 310px;
-    height: 320px;
+    width: 100%;
+    height: 100%;
     border: none;
     position: absolute;
+    left:0;
     z-index: 5;
-    background-color: rgb(221, 159, 116);
-    transition-property: width;
-    transition-duration: 1s;
+    background-color: rgb(212, 185, 160);
+    transition: width 1s 0s, left 1s;
 }
 
 .door:hover {
-    border-top: 3px solid rgb(234, 190, 158);
-    border-bottom: 3px solid rgb(234, 190, 158);
-    border-right: 3px solid rgb(234, 190, 158);
+    border-top: 3px solid rgb(191, 215, 200);
+    border-bottom: 3px solid rgb(191, 215, 200);
+    border-right: 3px solid rgb(191, 215, 200);
     cursor: pointer;
 }
 
 .door.open {
     width: 45px;
-    height: 320px;
+    height: 100%;
 }
 
 .handle {
