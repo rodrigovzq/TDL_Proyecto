@@ -175,7 +175,8 @@ function App() {
       name: 'oven',
       combinations: [['tomato-sauce','dough', 'pre-pizza'],
                     ['cheese','pre-pizza', 'pizza-simple'],
-                    ['potato', '', 'baked-potato']],
+                    ['potato', '', 'baked-potato'],
+                    ['dough', '', 'bread']],
       action: 'bake'
     },
     {
@@ -198,7 +199,7 @@ function App() {
                      ['fruit','water', 'juice'],
                      ['fruit', 'milk', 'smoothie'],
                      ['glass-of-water','fruit', 'juice'], 
-                     ['glass-of-water','sugar', 'soda'],
+                     ['glass-of-water','sugar', 'soda-water'],
                     ],
       action: 'combine'
     }
@@ -268,7 +269,8 @@ function App() {
       <Welcome />
       <div className="AppName">Little Restaurant</div>
       <div className="progress">
-        Recipes Found
+        Recipes Found: {`${recipes.filter((a) => (a.isAvailable && a.isInMenu )).length} / 
+                         ${recipes.filter((a)=> (a.isInMenu)).length}`}
       </div>
       <div className="AppContent">
         <div className="workbenchEl">

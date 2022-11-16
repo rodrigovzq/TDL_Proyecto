@@ -8,13 +8,20 @@
 
 .AppName {
     font-family: 'Cream-Cake';
+    text-align: center;
     font-size: 60px;
     border: none;
     background-color: transparent;
-    width: 420px;
     margin:auto;
     color: rgb(183, 36, 36);
 }
+
+.progress {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
 
 .AppContent {
     display: flex;
@@ -35,7 +42,6 @@
     flex-shrink: 1;
     flex-grow: 1;
 }
-
 
 
 
