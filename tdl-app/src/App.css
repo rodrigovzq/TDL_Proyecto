@@ -1,38 +1,136 @@
 .App {
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(197, 225, 197);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.AppName {
+    font-family: 'Berkshire Swash';
+    text-align: center;
+    font-size: 60px;
+    border: none;
+    background-color: transparent;
+    margin:auto;
+    color: rgb(183, 36, 36);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.progress {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+.AppContent {
+    display: flex;
+    flex-direction: row;
+    height: 98vh;
+    max-width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.AppContent > .workbenchEl {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+    flex-grow: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.AppContent > .restaurantEl {
+    display: flex;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+
+
+
+/* INSTRUCTIONS and CLEAR*/
+
+.actionsContainer {
+    width: 50px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:flex-end;
+}
+
+.cancel, .instructions {
+    border: none;
+    background-color: transparent;
+}
+
+.cancel:hover, .instructions:hover {
+    cursor: pointer;
+    position: relative;
+    z-index: 4;
+}
+
+.cancel > img, .instructions > img {
+    width: 20px;
+    height: 20px;
+}
+
+.cancel > img:hover, .instructions:hover {
+    filter: drop-shadow(1px 1px 0 rgb(165, 164, 164)) 
+    drop-shadow(-1px -1px 0 rgb(165, 164, 164))
+    drop-shadow(1px -1px 0 rgb(165, 164, 164))
+    drop-shadow(-1px 1px 0 rgb(165, 164, 164));
+}
+
+.instructions:hover > .instructionsList {
+    display: flex;
+    flex-direction: column;
+
+
+    background: rgb(227, 241, 234);
+    border: 1px solid white;
+    width: 180px;
+    border-radius: 5px;
+    padding-top: 5px;
+    position: absolute;
+    z-index: 4;
+    top: 15px;
+    left: 15px;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.instructionsList {
+    display: none;
+}
+
+.instructionsList li {
+    position:relative;
+    z-index: 4;
+    border-bottom: 1px solid #FFF;
+
+    padding: 0 5px 10px 5px;
+    margin-top: 3px;
+    list-style: none;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.instructionText {
+    margin-left: 10px;
+    vertical-align: top;
+}
+
+.bullet {
+    width: 25px;
+    height: 25px;
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+    vertical-align: bottom;
+}
+
+.instructionsList li:last-of-type {
+    border-bottom: none;
 }
