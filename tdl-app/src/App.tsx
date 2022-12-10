@@ -2,12 +2,14 @@ import React from 'react';
 import { useState } from 'react';
 import './App.css';
 import Recipes from './components/Recipes/Recipes'
+import Alert from './components/Alert/Alert';
 import { ingredient } from './components/Ingredient/Ingredient';
 import Workbench from './components/Workbench/Workbench';
 import Utensils from './components/Utensils/Utensils'
 import Utensil, { utensil } from './components/Utensil/Utensil'
 import Menu from './components/Menu/Menu'
 import Welcome from './components/Welcome/Welcome'
+
 
 const emptyIngredient = {
   name: '',
@@ -224,7 +226,7 @@ function App() {
 
   const combineIngredients = (selectedIngredients: ingredient[]) => {
     if (selectedIngredients.length===0) {
-      alert(`at least one ingredient must be selected.`)
+      Alert.noIngredientSelected()
       return;
     }
     const combinations = selectedUtensil[0].combinations;
@@ -240,20 +242,21 @@ function App() {
       const resultName = result[2]
       const oldRecipe = recipes.find((ingredient) => (ingredient.name === resultName))
       if (oldRecipe === undefined) {
-        alert("no combination exists")
+
+        Alert.noCombination()
       } else {
         if (oldRecipe.isAvailable === true) {
-          alert(`You already discovered ${resultName}.`)
+          Alert.ingredientAlreadyDiscovered(resultName)
           return;
         }
         const newRecipe = { ...oldRecipe, isAvailable: true }
         const oldRecipes = recipes.filter((ingredient) => (ingredient.name !== resultName))
         setRecipes([...oldRecipes, newRecipe])
-        alert(`Congrats! You discovered ${resultName} 👨‍🍳`)
+        Alert.ingredientDiscovered(resultName)
       }
     }
     else 
-      alert("no combination exists")
+    Alert.noCombination()
   }
 
   const cancelUtensil = () => {

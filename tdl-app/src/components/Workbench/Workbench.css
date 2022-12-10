@@ -65,11 +65,11 @@
     position: absolute;
     right: 5%;
     bottom: 52%;
-    z-index: 3;
+    z-index: 1;
 }
 
 .workbenchContent > .placeholder {
-    z-index: 4;
+    z-index: 3;
     position: absolute;
     bottom: 100%;
     font-weight: bold;
@@ -226,7 +226,7 @@
     flex-grow: 0;
     position: absolute;
     left: 50%;
-    z-index: 0;
+    z-index: 3;
 }
 
 .utensilsCupboard > .door {
