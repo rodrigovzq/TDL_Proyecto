@@ -16,6 +16,60 @@ const emptyIngredient = {
   isAvaialable: false
 }
 
+class Oven extends utensil {
+  constructor(name: string, combinations: string[][]) {
+    super(name, combinations, 'bake');
+  }
+  public render(onClick: Function) {
+    console.log("es oven")
+    return (<></>)
+  }
+}
+
+class Bowl extends utensil {
+  constructor(name: string, combinations: string[][]) {
+    super(name, combinations, 'fry or grill');
+  }
+  public render(onClick: Function) {
+    console.log("es bowl")
+    return (<></>)
+  }
+}
+
+class Pot extends utensil {
+  constructor(name: string, combinations: string[][]) {
+    super(name, combinations, 'boil');
+  }
+  public render(onClick: Function) {
+    console.log("es Pot")
+    return (<></>)
+  }
+}
+
+class Pan extends utensil {
+  constructor(name: string, combinations: string[][]) {
+    super(name, combinations, 'combine');
+  }
+  public render(onClick: Function) {
+    console.log("es Pan")
+    return (<></>)
+  }
+}
+
+// render oven
+function renderOven(onClick: Function) {
+  // mostrar cantidad 
+  console.log("es otra cosa")
+  return (<></>)
+}
+
+function renderBowl(onClick: Function) {
+  // mostrar cantidad 
+  console.log("es el bowl")
+  return (<></>)
+}
+
+
 function App() {
   const [selectedIngredients, setIngredients] = useState<ingredient[]>([]);
   const [recipes, setRecipes] = useState<ingredient[]>([
@@ -173,28 +227,25 @@ function App() {
 
   const [selectedUtensil, setSelectedUtensil] = useState<utensil[]>([]);
   const [utensils, setUtensils] = useState<utensil[]>([
-    {
-      name: 'oven',
-      combinations: [['tomato-sauce','dough', 'pre-pizza'],
+    new Oven(
+      'oven',
+      [['tomato-sauce','dough', 'pre-pizza'],
                     ['cheese','pre-pizza', 'pizza-simple'],
                     ['potato', '', 'baked-potato'],
                     ['dough', '', 'bread']],
-      action: 'bake'
-    },
-    {
-      name: 'pan',
-      combinations: [['egg','','fried-egg'],
+    ),
+    new Pan(
+      'pan',
+      [['egg','','fried-egg'],
                     ['potato', '', 'french-fries']],
-      action: 'fry or grill'
-    },
-    {
-      name: 'pot',
-      combinations: [],
-      action: 'boil'
-    },
-    {
-      name: 'bowl',
-      combinations: [['water','flour', 'dough'],
+    ),
+    new Pot(
+      'pot',
+      [],
+    ),
+    new Bowl(
+      'bowl',
+      [['water','flour', 'dough'],
                      ['water','tomato', 'tomato-sauce'], 
                      ['water','water', 'glass-of-water'],
                      ['fruit','sugar', 'fruit-salad'],
@@ -203,11 +254,12 @@ function App() {
                      ['glass-of-water','fruit', 'juice'], 
                      ['glass-of-water','sugar', 'soda-water'],
                     ],
-      action: 'combine'
-    }
+    )
   ])
 
   const chooseIngredient = (ingredient: ingredient) => {
+    if (selectedUtensil === undefined) return;
+
     if (selectedIngredients.length < 2) {
       const newIngredients = [...selectedIngredients, ingredient]
       setIngredients(newIngredients)
