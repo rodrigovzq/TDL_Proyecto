@@ -3,6 +3,8 @@ import './Utensils.css'
 import {utensil} from '../Utensil/Utensil'
 import Utensil from '../Utensil/Utensil'
 
+const utensilImages = require.context('../Images', true)
+
 interface Props {
     utensils: utensil[], // cambiarlo por un array de ingredientes.
     onClick: Function,
@@ -40,7 +42,15 @@ function Utensils({utensils, onClick, onCancel} : Props) {
                 {
                 utensils.map((utensil: any) => (
                     <div className="utensilsElement">
-                        <Utensil utensil={utensil} onClick={onClick}/>
+                        <button className="utensil" onClick={() => onClick(utensil)}>
+                            <div style={{display: 'flex',alignItems: 'center',justifyContent: 'center'}} className="utensilName">
+                            <span>{utensil.name.charAt(0).toUpperCase() +  utensil.name.slice(1)}</span>
+                            </div>
+
+                            <div className="utensilImg" style={{display: 'flex',alignItems: 'center',justifyContent: 'center'}}>
+                            <img src={utensilImages(`./${ utensil.name }.png`)} alt={`${utensil.name}`}/>
+                            </div>
+                        </button>
                     </div>
                 ))
                 }
