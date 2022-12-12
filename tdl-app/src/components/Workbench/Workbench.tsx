@@ -50,20 +50,6 @@ function Workbench({selectedUtensil, selectedIngredients, recipes, utensils,
             <div className="workbenchContent">
                     {selectedIngredients.length === 0? 
                         <div className='placeholder'>select Ingredients</div> : <></>}
-                    <div className='ingredientsContainer'>
-                        <div className='ingredientImgContainer'>
-                            {selectedIngredients.length > 0 ?
-                                <img className="ingredientImg" 
-                                    src={ingredientImages(`./${ selectedIngredients[0].name }.png`)} 
-                                    alt={`${selectedIngredients[0].name}`}/> : <></>}
-                        </div>
-                        <div className='ingredientImgContainer'>
-                            {selectedIngredients.length > 1 ?
-                                <img className="ingredientImg" 
-                                    src={ingredientImages(`./${ selectedIngredients[1].name }.png`)} 
-                                    alt={`${selectedIngredients[1].name}`}/> : <></>}
-                        </div>
-                    </div>
                     <Utensil utensil={selectedUtensil[0]} onClick={() => onCombine(selectedIngredients)}/>
             </div>}
         </div>

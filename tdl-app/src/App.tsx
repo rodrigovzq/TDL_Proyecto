@@ -176,49 +176,42 @@ function App() {
   const [selectedUtensil, setSelectedUtensil] = useState<utensil[]>([]);
   const [utensils, setUtensils] = useState<utensil[]>([
     new Oven(
-      'oven',
-      [['tomato-sauce','dough', 'pre-pizza'],
-                    ['cheese','pre-pizza', 'pizza-simple'],
-                    ['potato', '', 'baked-potato'],
-                    ['dough', '', 'bread']],
+      [['dough','tomato-sauce', '', 'pre-pizza'],
+      ['cheese','pre-pizza', '', 'pizza-simple'],
+      ['potato', '', '', 'baked-potato'],
+      ['dough', '', '', 'bread']],
+      selectedIngredients
     ),
     new Pan(
-      'pan',
       [['egg','','fried-egg'],
-                    ['potato', '', 'french-fries']],
+      ['potato', '', 'french-fries']],
+      selectedIngredients
     ),
     new Pot(
-      'pot',
       [],
+      selectedIngredients
     ),
     new Bowl(
-      'bowl',
-      [['water','flour', 'dough'],
-                     ['water','tomato', 'tomato-sauce'], 
-                     ['water','water', 'glass-of-water'],
-                     ['fruit','sugar', 'fruit-salad'],
-                     ['fruit','water', 'juice'],
-                     ['fruit', 'milk', 'smoothie'],
-                     ['glass-of-water','fruit', 'juice'], 
-                     ['glass-of-water','sugar', 'soda-water'],
-                    ],
+      [['flour', 'water', 'dough'],
+      ['tomato', 'water','tomato-sauce'], 
+      ['water','water', 'glass-of-water'],
+      ['fruit','sugar', 'fruit-salad'],
+      ['fruit','water', 'juice'],
+      ['fruit', 'milk', 'smoothie'],
+      ['fruit', 'glass-of-water', 'juice'], 
+      ['sugar', 'glass-of-water', 'soda-water']],
+      selectedIngredients
     )
   ])
 
   const chooseIngredient = (ingredient: ingredient) => {
     if (selectedUtensil === undefined) return;
 
-    if (selectedIngredients.length < 2) {
-      const newIngredients = [...selectedIngredients, ingredient]
-      setIngredients(newIngredients)
-      console.log(selectedIngredients)
-    } else {
-      setIngredients([ingredient])
-      console.log(selectedIngredients)
-    }
+    setIngredients(selectedUtensil[0].setIngredients(ingredient))
   }
 
   const chooseUtensil = (utensil: utensil) => {
+    if (selectedUtensil !== undefined) utensil.cleanUtensil();
     setSelectedUtensil([utensil])
     setIngredients([])
     console.log(selectedUtensil)
@@ -229,17 +222,10 @@ function App() {
       Alert.noIngredientSelected()
       return;
     }
-    const combinations = selectedUtensil[0].combinations;
-    const selectedIngNames = [...selectedIngredients.map( (a) => a.name), '']
+    const resultName = selectedUtensil[0].combine();
+    console.log(resultName)
 
-    const result = combinations.find((value) => (
-      (value[0] === selectedIngNames[0] && value[1] === selectedIngNames[1])  ||
-            (value[0] === selectedIngNames[1] && value[1] === selectedIngNames[0])
-    ))
-    console.log(result)
-
-    if(result !== undefined){
-      const resultName = result[2]
+    if(resultName !== undefined){
       const oldRecipe = recipes.find((ingredient) => (ingredient.name === resultName))
       if (oldRecipe === undefined) {
 
@@ -264,6 +250,7 @@ function App() {
   }
 
   const cancelIngredients = () => {
+    selectedUtensil[0].cleanUtensil();
     setIngredients([])
   }
 
