@@ -6,69 +6,17 @@ import Alert from './components/Alert/Alert';
 import { ingredient } from './components/Ingredient/Ingredient';
 import Workbench from './components/Workbench/Workbench';
 import Utensils from './components/Utensils/Utensils'
-import Utensil, { utensil } from './components/Utensil/Utensil'
+import Utensil from './components/Utensil/Utensil'
+import {utensil} from './components/utils'
 import Menu from './components/Menu/Menu'
 import Welcome from './components/Welcome/Welcome'
+import {Bowl, Oven, Pan, Pot} from './components/utils'
 
 
 const emptyIngredient = {
   name: '',
   isAvaialable: false
 }
-
-class Oven extends utensil {
-  constructor(name: string, combinations: string[][]) {
-    super(name, combinations, 'bake');
-  }
-  public render(onClick: Function) {
-    console.log("es oven")
-    return (<></>)
-  }
-}
-
-class Bowl extends utensil {
-  constructor(name: string, combinations: string[][]) {
-    super(name, combinations, 'fry or grill');
-  }
-  public render(onClick: Function) {
-    console.log("es bowl")
-    return (<></>)
-  }
-}
-
-class Pot extends utensil {
-  constructor(name: string, combinations: string[][]) {
-    super(name, combinations, 'boil');
-  }
-  public render(onClick: Function) {
-    console.log("es Pot")
-    return (<></>)
-  }
-}
-
-class Pan extends utensil {
-  constructor(name: string, combinations: string[][]) {
-    super(name, combinations, 'combine');
-  }
-  public render(onClick: Function) {
-    console.log("es Pan")
-    return (<></>)
-  }
-}
-
-// render oven
-function renderOven(onClick: Function) {
-  // mostrar cantidad 
-  console.log("es otra cosa")
-  return (<></>)
-}
-
-function renderBowl(onClick: Function) {
-  // mostrar cantidad 
-  console.log("es el bowl")
-  return (<></>)
-}
-
 
 function App() {
   const [selectedIngredients, setIngredients] = useState<ingredient[]>([]);

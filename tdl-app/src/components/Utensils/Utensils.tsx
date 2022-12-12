@@ -1,6 +1,6 @@
 import React from 'react'
 import './Utensils.css'
-import {utensil} from '../Utensil/Utensil'
+import {utensil} from '../utils'
 import Utensil from '../Utensil/Utensil'
 
 const utensilImages = require.context('../Images', true)
@@ -40,17 +40,9 @@ function Utensils({utensils, onClick, onCancel} : Props) {
             </div>
             <div className="utensilsList">
                 {
-                utensils.map((utensil: any) => (
+                utensils.map((utensil: utensil) => (
                     <div className="utensilsElement">
-                        <button className="utensil" onClick={() => onClick(utensil)}>
-                            <div style={{display: 'flex',alignItems: 'center',justifyContent: 'center'}} className="utensilName">
-                            <span>{utensil.name.charAt(0).toUpperCase() +  utensil.name.slice(1)}</span>
-                            </div>
-
-                            <div className="utensilImg" style={{display: 'flex',alignItems: 'center',justifyContent: 'center'}}>
-                            <img src={utensilImages(`./${ utensil.name }.png`)} alt={`${utensil.name}`}/>
-                            </div>
-                        </button>
+                        {utensil.display(onClick)}
                     </div>
                 ))
                 }

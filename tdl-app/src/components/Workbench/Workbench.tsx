@@ -1,5 +1,6 @@
 import React from 'react'
-import Utensil, { utensil} from '../Utensil/Utensil'
+import Utensil from '../Utensil/Utensil'
+import {utensil} from '../utils'
 import {ingredient} from '../Ingredient/Ingredient'
 import Door from '../Door/Door'
 import Recipes from '../Recipes/Recipes'
@@ -32,7 +33,6 @@ function Workbench({selectedUtensil, selectedIngredients, recipes, utensils,
             Kitchen
         </div>
         <div className="kitchen">
-            {/* <img className="kitchenImg" src={kitchenImage}/> */}
             <div className="recipesCupboard">
                 <Door />
                 <Recipes recipes={recipes} onClick={onChooseIngredient} onCancel={onCancelIngredients}/>
