@@ -39,6 +39,7 @@ export abstract class utensil {
             </button>)
     };
     protected abstract displayIngredients() : React.ReactElement;
+    public abstract combine() : string | undefined;
 
     public setIngredients(ingredient: ingredient) : ingredient[] {
         if (this.ingredients.length < this.maxIngredients) {
@@ -54,7 +55,6 @@ export abstract class utensil {
     public cleanUtensil() : void {
         this.ingredients = [];
     }
-    public abstract combine() : string | undefined;
 }
 
 
