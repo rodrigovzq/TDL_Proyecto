@@ -1,5 +1,6 @@
 import React from 'react'
-import Utensil, { utensil} from '../Utensil/Utensil'
+import Utensil from '../Utensil/Utensil'
+import {utensil} from '../utils'
 import {ingredient} from '../Ingredient/Ingredient'
 import Door from '../Door/Door'
 import Recipes from '../Recipes/Recipes'
@@ -32,7 +33,6 @@ function Workbench({selectedUtensil, selectedIngredients, recipes, utensils,
             Kitchen
         </div>
         <div className="kitchen">
-            {/* <img className="kitchenImg" src={kitchenImage}/> */}
             <div className="recipesCupboard">
                 <Door />
                 <Recipes recipes={recipes} onClick={onChooseIngredient} onCancel={onCancelIngredients}/>
@@ -50,20 +50,6 @@ function Workbench({selectedUtensil, selectedIngredients, recipes, utensils,
             <div className="workbenchContent">
                     {selectedIngredients.length === 0? 
                         <div className='placeholder'>select Ingredients</div> : <></>}
-                    <div className='ingredientsContainer'>
-                        <div className='ingredientImgContainer'>
-                            {selectedIngredients.length > 0 ?
-                                <img className="ingredientImg" 
-                                    src={ingredientImages(`./${ selectedIngredients[0].name }.png`)} 
-                                    alt={`${selectedIngredients[0].name}`}/> : <></>}
-                        </div>
-                        <div className='ingredientImgContainer'>
-                            {selectedIngredients.length > 1 ?
-                                <img className="ingredientImg" 
-                                    src={ingredientImages(`./${ selectedIngredients[1].name }.png`)} 
-                                    alt={`${selectedIngredients[1].name}`}/> : <></>}
-                        </div>
-                    </div>
                     <Utensil utensil={selectedUtensil[0]} onClick={() => onCombine(selectedIngredients)}/>
             </div>}
         </div>

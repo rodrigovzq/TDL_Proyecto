@@ -1,7 +1,9 @@
 import React from 'react'
 import './Utensils.css'
-import {utensil} from '../Utensil/Utensil'
+import {utensil} from '../utils'
 import Utensil from '../Utensil/Utensil'
+
+const utensilImages = require.context('../Images', true)
 
 interface Props {
     utensils: utensil[], // cambiarlo por un array de ingredientes.
@@ -38,9 +40,9 @@ function Utensils({utensils, onClick, onCancel} : Props) {
             </div>
             <div className="utensilsList">
                 {
-                utensils.map((utensil: any) => (
+                utensils.map((utensil: utensil) => (
                     <div className="utensilsElement">
-                        <Utensil utensil={utensil} onClick={onClick}/>
+                        {utensil.display(onClick)}
                     </div>
                 ))
                 }
