@@ -226,14 +226,20 @@ function App() {
     },
     {
       name: 'bowl',
-      combinations: [['water', 'flour', 'dough'],
-      ['water', 'tomato', 'tomato-sauce'],
-      ['water', 'water', 'glass-of-water'],
-      ['fruit', 'sugar', 'fruit-salad'],
-      ['fruit', 'water', 'juice'],
-      ['fruit', 'milk', 'smoothie'],
-      ['glass-of-water', 'fruit', 'juice'],
-      ['glass-of-water', 'sugar', 'soda-water'],
+      combinations: [
+        ['water', 'flour', 'dough'],
+        ['water', 'water', 'glass-of-water'],
+        ['fruit', 'sugar', 'fruit-salad'],
+        ['fruit', 'water', 'juice'],
+        ['fruit', 'milk', 'smoothie'],
+        ['glass-of-water', 'fruit', 'juice'],
+        ['glass-of-water', 'sugar', 'soda-water'],
+        ['flour', 'egg', 'pasta'],
+        ['dough', 'sugar', 'cake-premix'],
+        ['lettuce', 'tomato', 'salad'],
+        ['pasta', 'tomato-sauce', 'spaghetti'],
+        ['meat', 'bread', 'sandwich'],
+        ['cake', 'fruit', 'cake-fruit'],
       ],
       action: 'combine'
     }
