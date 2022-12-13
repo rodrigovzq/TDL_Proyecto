@@ -91,7 +91,6 @@
 
     position: relative;
     border: 1px solid red;
-    z-index: 5;
 }
 
 .utensilContainer > img {
@@ -202,7 +201,7 @@
     width: 376px;
     height: 384px;
     position: absolute;
-    z-index: 2;
+    z-index: 20;
 }
 
 .recipesCupboard > .recipes {
@@ -252,4 +251,18 @@
     height: 82%;
     flex-direction: column;
     overflow-y: hidden;
+}
+
+
+/* INSTRUCTIONS */
+
+.workbenchContent > .instructions {
+    position: relative;
+    top: 50%;
+    right: 40%;
+}
+
+.workbenchContent > .instructions > img {
+    width: 40px;
+    height: 40px;
 }

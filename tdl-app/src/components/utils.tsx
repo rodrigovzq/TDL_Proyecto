@@ -60,7 +60,7 @@ export abstract class utensil {
 
 export class Bowl extends utensil {
     constructor(combinations: string[][], ingredients: ingredient[]) {
-      super('bowl', combinations, 'fry or grill', 2, ingredients);
+      super('bowl', combinations, 'combine', 2, ingredients);
     }
 
     protected displayIngredients(): React.ReactElement {
@@ -182,7 +182,7 @@ export class Pot extends utensil {
   
 export class Pan extends utensil {
     constructor(combinations: string[][], ingredients: ingredient[]) {
-      super('pan', combinations, 'combine', 2, ingredients);
+      super('pan', combinations, 'fry or grill', 2, ingredients);
     }
 
     protected displayIngredients(): React.ReactElement {

@@ -4,7 +4,7 @@
     border: none;
     position: absolute;
     left:0;
-    z-index: 5;
+    z-index: 3;
     background-color: rgb(212, 185, 160);
     transition: width 1s 0s, left 1s;
 }

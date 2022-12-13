@@ -49,3 +49,12 @@
 .welcomeText {
     width: 40%;
 }
+
+.instructionsText {
+    width: 40%;
+}
+
+.instructionsIcon {
+    width: 30px;
+    height: 30px;
+}

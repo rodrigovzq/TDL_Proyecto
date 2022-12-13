@@ -46,7 +46,7 @@
 
 
 
-/* INSTRUCTIONS and CLEAR*/
+/* INSTRUCTIONS and CLEAR */
 
 .actionsContainer {
     width: 50px;
@@ -63,8 +63,6 @@
 
 .cancel:hover, .instructions:hover {
     cursor: pointer;
-    position: relative;
-    z-index: 6;
 }
 
 .cancel > img, .instructions > img {
@@ -90,7 +88,6 @@
     border-radius: 5px;
     padding-top: 5px;
     position: absolute;
-    z-index: 6;
     top: 15px;
     left: 15px;
     font-size: 12px;
@@ -103,7 +100,6 @@
 
 .instructionsList li {
     position:relative;
-    z-index: 4;
     border-bottom: 1px solid #FFF;
 
     padding: 0 5px 10px 5px;

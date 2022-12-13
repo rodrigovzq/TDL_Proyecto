@@ -10,6 +10,9 @@ import './Workbench.css'
 const ingredientImages = require.context('../Images', true)
 const utensilImages = require.context('../Images', true)
 const kitchenImage = require('./Kitchen.png')
+const instructionsBtn = require("../../button-images/book.png")
+const bullet = require('../../button-images/light-bulb.png')
+
 
 interface Props {
     selectedUtensil: utensil[],
@@ -51,6 +54,15 @@ function Workbench({selectedUtensil, selectedIngredients, recipes, utensils,
                     {selectedIngredients.length === 0? 
                         <div className='placeholder'>select Ingredients</div> : <></>}
                     <Utensil utensil={selectedUtensil[0]} onClick={() => onCombine(selectedIngredients)}/>
+                    <div className="instructions"> 
+                        <img src={instructionsBtn}/>
+                        <ul className="instructionsList">
+                                <li>
+                                    <img className="bullet" src={bullet} />
+                                    <div className="instructionText">Tap the utensil to combine the ingredients inside it</div>
+                                </li>
+                        </ul>
+                    </div> 
             </div>}
         </div>
         <div className="Instructions">
