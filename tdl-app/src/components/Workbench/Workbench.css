@@ -252,3 +252,17 @@
     flex-direction: column;
     overflow-y: hidden;
 }
+
+
+/* INSTRUCTIONS */
+
+.workbenchContent > .instructions {
+    position: relative;
+    top: 50%;
+    right: 40%;
+}
+
+.workbenchContent > .instructions > img {
+    width: 40px;
+    height: 40px;
+}
