@@ -132,7 +132,7 @@ function App() {
       isInMenu: true,
     },
     {
-      name: 'soda',
+      name: 'soda-water',
       isAvailable: false,
       isInMenu: true,
     },
