@@ -210,7 +210,18 @@ function App() {
     },
     {
       name: 'pot',
-      combinations: [],
+      combinations: [
+        ['water', 'egg', 'boiled-egg'],
+        ['water', 'potato', 'mashed-potato'],
+        ['tomato', 'onion', 'tomato-sauce'],
+        ['tomato', 'garlic', 'tomato-sauce'],
+        ['tomato', '', 'tomato-sauce'],
+        ['milk', 'sugar', 'ddl'],
+        ['meat', 'potato', 'locro'],
+        ['pasta', 'potato', 'gnochi'],
+        ['pasta', 'tomato', 'spaghetti'],
+        ['pasta', 'meat', 'pasta-meatball'],
+      ],
       action: 'boil'
     },
     {
