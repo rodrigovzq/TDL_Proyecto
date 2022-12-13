@@ -199,8 +199,13 @@ function App() {
     },
     {
       name: 'pan',
-      combinations: [['egg', '', 'fried-egg'],
-      ['potato', '', 'french-fries']],
+      combinations: [
+        ['egg', '', 'fried-egg'],
+        ['potato', '', 'french-fries'],
+        ['meat', '', 'burger'],
+        ['burger', 'cheese', 'burger-cheese'],
+        ['burger', 'tomato', 'burger-tomato'],
+      ],
       action: 'fry or grill'
     },
     {
