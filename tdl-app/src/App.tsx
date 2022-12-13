@@ -174,24 +174,24 @@ function App() {
     {
       name: 'oven',
       combinations: [
-        ['tomato-sauce', 'dough', 'pre-pizza'],
-        ['pre-pizza', 'cheese', 'pizza-simple'],
-        ['pre-pizza', 'onion', 'pizza-onion'],
+        ['dough', 'tomato-sauce', '', 'pre-pizza'],
+        ['cheese', 'pre-pizza', '', 'pizza-simple'],
+        ['onion', 'pre-pizza', '', 'pizza-onion'],
         // Platos de 3 ingredientes
-        ['pre-pizza', 'cheese', 'tomato,', 'pizza-tomato'],
-        ['pre-pizza', 'cheese', 'onion,', 'pizza-onion'],
-        ['pre-pizza', 'cheese', 'meat,', 'pizza-meat'],
+        ['cheese', 'pre-pizza', 'tomato', 'pizza-tomato'],
+        ['cheese', 'onion', 'pre-pizza', 'pizza-onion'],
+        ['cheese', 'pre-pizza', 'meat,', 'pizza-meat'],
         /////////////////////////////
-        ['potato', '', 'baked-potato'],
-        ['dough', '', 'bread'],
-        ['dough', 'egg', 'pasta'],
-        ['meat', 'bread', 'milanesa'],
-        ['meat', 'pasta', 'lasagna'],
-        ['meat', '', 'steak'],
-        ['cake-premix', '', 'cake'],
-        ['cake-premix', 'fruit', 'pastafrola'],
-        ['cake-premix', 'ddl', 'cake-ddl'],
-        ['cake-premix', 'carrot', 'cake-carrot'],
+        ['potato', '', '', 'baked-potato'],
+        ['dough', '', '', 'bread'],
+        ['dough', 'egg', '', 'pasta'],
+        ['bread', 'meat', '', 'milanesa'],
+        ['meat', 'pasta', '', 'lasagna'],
+        ['meat', '', '', 'steak'],
+        ['cake-premix', '', '', 'cake'],
+        ['cake-premix', 'fruit', '', 'pastafrola'],
+        ['cake-premix', 'ddl', '', 'cake-ddl'],
+        ['cake-premix', 'carrot', '', 'cake-carrot'],
       ],
       action: 'bake'
     },
@@ -203,7 +203,6 @@ function App() {
         ['meat', '', 'burger'],
         ['burger', 'cheese', 'burger-cheese'],
         ['burger', 'tomato', 'burger-tomato'],
-
       ],
       action: 'fry or grill'
     },
