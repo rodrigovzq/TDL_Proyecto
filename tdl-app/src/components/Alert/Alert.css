@@ -1,0 +1,14 @@
+.swal-footer {
+    text-align: center;
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+    vertical-align: bottom;
+}
+
+.swal2-modal {
+    background-color: rgba(63,255,106,0.69);
+    border: 3px solid white;
+  }
