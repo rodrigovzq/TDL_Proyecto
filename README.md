@@ -2,8 +2,8 @@
 
 ## Autor: Grupo NULL
 
-Integrantes
+| Integrantes |
 -------------
-Denise Gayet 
-Maximiliano Reigada
-Rodrigo Vazquez
+|Denise Gayet |
+|Maximiliano Reigada|
+|Rodrigo Vazquez|
