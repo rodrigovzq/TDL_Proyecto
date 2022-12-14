@@ -6,9 +6,11 @@ import Alert from './components/Alert/Alert';
 import { ingredient } from './components/Ingredient/Ingredient';
 import Workbench from './components/Workbench/Workbench';
 import Utensils from './components/Utensils/Utensils'
-import Utensil, { utensil } from './components/Utensil/Utensil'
+import Utensil from './components/Utensil/Utensil'
+import {utensil} from './components/utils'
 import Menu from './components/Menu/Menu'
 import Welcome from './components/Welcome/Welcome'
+import {Bowl, Oven, Pan, Pot} from './components/utils'
 
 
 const emptyIngredient = {
@@ -130,7 +132,7 @@ function App() {
       isInMenu: true,
     },
     {
-      name: 'soda',
+      name: 'soda-water',
       isAvailable: false,
       isInMenu: true,
     },
@@ -173,9 +175,8 @@ function App() {
 
   const [selectedUtensil, setSelectedUtensil] = useState<utensil[]>([]);
   const [utensils, setUtensils] = useState<utensil[]>([
-    {
-      name: 'oven',
-      combinations: [
+    new Oven(
+       [
         ['dough', 'tomato-sauce', '', 'pre-pizza'],
         ['cheese', 'pre-pizza', '', 'pizza-simple'],
         ['onion', 'pre-pizza', '', 'pizza-onion'],
@@ -193,24 +194,22 @@ function App() {
         ['cake-premix', '', '', 'cake'],
         ['cake-premix', 'fruit', '', 'pastafrola'],
         ['cake-premix', 'ddl', '', 'cake-ddl'],
-        ['cake-premix', 'carrot', '', 'cake-carrot'],
+        ['cake-premix', 'carrot', '', 'cake-carrot']
       ],
-      action: 'bake'
-    },
-    {
-      name: 'pan',
-      combinations: [
+      selectedIngredients
+    ),
+    new Pan(
+      [
         ['egg', '', 'fried-egg'],
         ['potato', '', 'french-fries'],
         ['meat', '', 'burger'],
         ['burger', 'cheese', 'burger-cheese'],
         ['burger', 'tomato', 'burger-tomato'],
       ],
-      action: 'fry or grill'
-    },
-    {
-      name: 'pot',
-      combinations: [
+      selectedIngredients
+    ),
+    new Pot(
+      [
         ['water', 'egg', 'boiled-egg'],
         ['water', 'potato', 'mashed-potato'],
         ['tomato', 'onion', 'tomato-sauce'],
@@ -222,41 +221,36 @@ function App() {
         ['pasta', 'tomato', 'spaghetti'],
         ['pasta', 'meat', 'pasta-meatball'],
       ],
-      action: 'boil'
-    },
-    {
-      name: 'bowl',
-      combinations: [
-        ['water', 'flour', 'dough'],
-        ['water', 'water', 'glass-of-water'],
-        ['fruit', 'sugar', 'fruit-salad'],
-        ['fruit', 'water', 'juice'],
-        ['fruit', 'milk', 'smoothie'],
-        ['glass-of-water', 'fruit', 'juice'],
-        ['glass-of-water', 'sugar', 'soda-water'],
-        ['flour', 'egg', 'pasta'],
-        ['dough', 'sugar', 'cake-premix'],
-        ['lettuce', 'tomato', 'salad'],
-        ['pasta', 'tomato-sauce', 'spaghetti'],
-        ['meat', 'bread', 'sandwich'],
-        ['cake', 'fruit', 'cake-fruit'],
+      selectedIngredients
+    ),
+    new Bowl(
+    [
+      ['water', 'flour', 'dough'],
+      ['water', 'water', 'glass-of-water'],
+      ['fruit', 'sugar', 'fruit-salad'],
+      ['fruit', 'water', 'juice'],
+      ['fruit', 'milk', 'smoothie'],
+      ['glass-of-water', 'fruit', 'juice'],
+      ['glass-of-water', 'sugar', 'soda-water'],
+      ['flour', 'egg', 'pasta'],
+      ['dough', 'sugar', 'cake-premix'],
+      ['lettuce', 'tomato', 'salad'],
+      ['pasta', 'tomato-sauce', 'spaghetti'],
+      ['meat', 'bread', 'sandwich'],
+      ['cake', 'fruit', 'cake-fruit'],
       ],
-      action: 'combine'
-    }
+      selectedIngredients
+    )
   ])
 
   const chooseIngredient = (ingredient: ingredient) => {
-    if (selectedIngredients.length < 2) {
-      const newIngredients = [...selectedIngredients, ingredient]
-      setIngredients(newIngredients)
-      console.log(selectedIngredients)
-    } else {
-      setIngredients([ingredient])
-      console.log(selectedIngredients)
-    }
+    if (selectedUtensil === undefined) return;
+
+    setIngredients(selectedUtensil[0].setIngredients(ingredient))
   }
 
   const chooseUtensil = (utensil: utensil) => {
+    if (selectedUtensil !== undefined) utensil.cleanUtensil();
     setSelectedUtensil([utensil])
     setIngredients([])
     console.log(selectedUtensil)
@@ -267,22 +261,15 @@ function App() {
       Alert.noIngredientSelected()
       return;
     }
-    const combinations = selectedUtensil[0].combinations;
-    const selectedIngNames = [...selectedIngredients.map((a) => a.name), '']
+    const resultName = selectedUtensil[0].combine();
+    console.log(resultName)
 
-    const result = combinations.find((value) => (
-      (value[0] === selectedIngNames[0] && value[1] === selectedIngNames[1]) ||
-      (value[0] === selectedIngNames[1] && value[1] === selectedIngNames[0])
-    ))
-    console.log(result)
-
-    if (result !== undefined) {
-      const resultName = result[2]
+    if(resultName !== undefined){
       const oldRecipe = recipes.find((ingredient) => (ingredient.name === resultName))
       if (oldRecipe === undefined) {
-
         Alert.noCombination()
-      } else {
+      } 
+      else {
         if (oldRecipe.isAvailable === true) {
           Alert.ingredientAlreadyDiscovered(resultName)
           return;
@@ -290,7 +277,14 @@ function App() {
         const newRecipe = { ...oldRecipe, isAvailable: true }
         const oldRecipes = recipes.filter((ingredient) => (ingredient.name !== resultName))
         setRecipes([...oldRecipes, newRecipe])
-        Alert.ingredientDiscovered(resultName)
+
+        if(newRecipe.isInMenu)
+          Alert.recipeDiscovered(resultName)
+        else
+          Alert.ingredientDiscovered(resultName)        
+        if((recipes.filter((a) => (a.isAvailable && a.isInMenu )).length + 1) === recipes.filter((a)=> (a.isInMenu)).length){
+          Alert.allRecipesDiscovered();  
+        }
       }
     }
     else
@@ -302,6 +296,7 @@ function App() {
   }
 
   const cancelIngredients = () => {
+    selectedUtensil[0].cleanUtensil();
     setIngredients([])
   }
 

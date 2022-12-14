@@ -1,5 +1,6 @@
 import React from 'react'
-import Utensil, { utensil} from '../Utensil/Utensil'
+import Utensil from '../Utensil/Utensil'
+import {utensil} from '../utils'
 import {ingredient} from '../Ingredient/Ingredient'
 import Door from '../Door/Door'
 import Recipes from '../Recipes/Recipes'
@@ -9,6 +10,9 @@ import './Workbench.css'
 const ingredientImages = require.context('../Images', true)
 const utensilImages = require.context('../Images', true)
 const kitchenImage = require('./Kitchen.png')
+const instructionsBtn = require("../../button-images/book.png")
+const bullet = require('../../button-images/light-bulb.png')
+
 
 interface Props {
     selectedUtensil: utensil[],
@@ -32,7 +36,6 @@ function Workbench({selectedUtensil, selectedIngredients, recipes, utensils,
             Kitchen
         </div>
         <div className="kitchen">
-            {/* <img className="kitchenImg" src={kitchenImage}/> */}
             <div className="recipesCupboard">
                 <Door />
                 <Recipes recipes={recipes} onClick={onChooseIngredient} onCancel={onCancelIngredients}/>
@@ -50,21 +53,16 @@ function Workbench({selectedUtensil, selectedIngredients, recipes, utensils,
             <div className="workbenchContent">
                     {selectedIngredients.length === 0? 
                         <div className='placeholder'>select Ingredients</div> : <></>}
-                    <div className='ingredientsContainer'>
-                        <div className='ingredientImgContainer'>
-                            {selectedIngredients.length > 0 ?
-                                <img className="ingredientImg" 
-                                    src={ingredientImages(`./${ selectedIngredients[0].name }.png`)} 
-                                    alt={`${selectedIngredients[0].name}`}/> : <></>}
-                        </div>
-                        <div className='ingredientImgContainer'>
-                            {selectedIngredients.length > 1 ?
-                                <img className="ingredientImg" 
-                                    src={ingredientImages(`./${ selectedIngredients[1].name }.png`)} 
-                                    alt={`${selectedIngredients[1].name}`}/> : <></>}
-                        </div>
-                    </div>
                     <Utensil utensil={selectedUtensil[0]} onClick={() => onCombine(selectedIngredients)}/>
+                    <div className="instructions"> 
+                        <img src={instructionsBtn}/>
+                        <ul className="instructionsList">
+                                <li>
+                                    <img className="bullet" src={bullet} />
+                                    <div className="instructionText">Tap the utensil to combine the ingredients inside it</div>
+                                </li>
+                        </ul>
+                    </div> 
             </div>}
         </div>
         <div className="Instructions">
