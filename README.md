@@ -2,8 +2,7 @@
 
 ## Autor: Grupo NULL
 
-| Integrantes | Padron |
-|-------------|
-|Denise Gayet | | 
-|Maximiliano Reigada| |
-|Rodrigo Vazquez| |
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
