@@ -228,9 +228,9 @@ function App() {
     if(resultName !== undefined){
       const oldRecipe = recipes.find((ingredient) => (ingredient.name === resultName))
       if (oldRecipe === undefined) {
-
         Alert.noCombination()
-      } else {
+      } 
+      else {
         if (oldRecipe.isAvailable === true) {
           Alert.ingredientAlreadyDiscovered(resultName)
           return;
@@ -238,7 +238,14 @@ function App() {
         const newRecipe = { ...oldRecipe, isAvailable: true }
         const oldRecipes = recipes.filter((ingredient) => (ingredient.name !== resultName))
         setRecipes([...oldRecipes, newRecipe])
-        Alert.ingredientDiscovered(resultName)
+
+        if(newRecipe.isInMenu)
+          Alert.recipeDiscovered(resultName)
+        else
+          Alert.ingredientDiscovered(resultName)        
+        if((recipes.filter((a) => (a.isAvailable && a.isInMenu )).length + 1) === recipes.filter((a)=> (a.isInMenu)).length){
+          Alert.allRecipesDiscovered();  
+        }
       }
     }
     else 

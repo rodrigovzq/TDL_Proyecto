@@ -120,7 +120,7 @@ export class Oven extends utensil {
         <div className='ingredientImgContainer'>
             {this.ingredients.length > 2 ?
                 <img className="ingredientImg" 
-                    src={ingredientImages(`./${ this.ingredients[1].name }.png`)} 
+                    src={ingredientImages(`./${ this.ingredients[2].name }.png`)} 
                     alt={`${this.ingredients[1].name}`}/> : <></>}
         </div>
     </div>
