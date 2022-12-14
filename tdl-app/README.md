@@ -1,46 +1,33 @@
-# Getting Started with Create React App
+# Ejercicio integrador de la materia
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+El ejercicio integrador consiste en una aplicación web implementada con TypeScript y fundamentalmente el paquete, React. 
 
-## Available Scripts
+Para ejecutar la aplicación se debe, en primer lugar, instalar los paquetes necesarios mediante: `npm install`
 
-In the project directory, you can run:
+Una vez instalado los paquetes, se puede iniciar la aplicación mediante `npm start` y se puede ejecutar en un navegador web, en el puerto 3000 del local host.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Descripción de la aplicación
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Se desarrolló un juego en el cual el objetivo es encontrar todas las **recetas** de un restaurant mediante la combinación de **ingredients** y **utensillos**. 
 
-### `npm test`
+A partir de ingredientes básicos que se encuentran disponibles desde el inicio del juego se encuentran ingredientes más elaborados cuando se combinan con los utensillos. Algunos de los descubrimientos constituyen parte del menú del restaurant.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Una vez que se encuentran todos las recetas del menú se da por ganado el juego.
 
-### `npm run build`
+## Compontenes y Estructura básica
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+El componente principal de la aplicación, `App.tsx`, está compuesto esencialmente por dos componentes: la estación de trabajo `Workbench.tsx` y el menú `Menu.tsx`. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+La estación de trabajo `Workbench.tsx` contiene los elementos principales: `Recipes.tsx` y `Utensils.tsx`, los cuales contienen las lista de ingredientes y utensillos, respectivamente, y la estación de trabajo, propiamente dicha, donde interactúan los ingredientes y los utensillos.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+A su vez, `Recipes.tsx` contiene una lista de los ingredientes disponibles, cuyo componente respectivo es `Ingredient.tsx`, y `Utensils.tsx` contiene una lista de los utensillos disponibles, cuyo componente respectivo es `Utensil.tsx`. 
 
-### `npm run eject`
+Por otro lado, `Menu.tsx` contiene una lista de las recetas **descubiertas** que forman parte del menú, es decir, también, una lista de `Ingredient.tsx`.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+A continuación se muestra una figura con el modelo de la aplicación para sumarizar la explicación.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![box-model](./readme-imgs/box-model.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
