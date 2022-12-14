@@ -137,10 +137,15 @@ function App() {
       isInMenu: true,
     },
     {
+      name: 'pizza-onion',
+      isAvailable: false,
+      isInMenu: true,
+    },  
+    {
       name: 'pizza-simple',
       isAvailable: false,
       isInMenu: true,
-    },
+    },     
     {
       name: 'potato',
       isAvailable: true,
@@ -175,33 +180,76 @@ function App() {
 
   const [selectedUtensil, setSelectedUtensil] = useState<utensil[]>([]);
   const [utensils, setUtensils] = useState<utensil[]>([
-    new Oven(
-      [['dough','tomato-sauce', '', 'pre-pizza'],
-      ['cheese','pre-pizza', '', 'pizza-simple'],
-      ['potato', '', '', 'baked-potato'],
-      ['dough', '', '', 'bread']],
-      selectedIngredients
-    ),
-    new Pan(
-      [['egg','','fried-egg'],
-      ['potato', '', 'french-fries']],
-      selectedIngredients
-    ),
-    new Pot(
-      [],
-      selectedIngredients
-    ),
-    new Bowl(
-      [['flour', 'water', 'dough'],
-      ['tomato', 'water','tomato-sauce'], 
-      ['water','water', 'glass-of-water'],
-      ['fruit','sugar', 'fruit-salad'],
-      ['fruit','water', 'juice'],
-      ['fruit', 'milk', 'smoothie'],
-      ['fruit', 'glass-of-water', 'juice'], 
-      ['sugar', 'glass-of-water', 'soda-water']],
-      selectedIngredients
-    )
+    {
+      name: 'oven',
+      combinations: [
+        ['dough', 'tomato-sauce', '', 'pre-pizza'],
+        ['cheese', 'pre-pizza', '', 'pizza-simple'],
+        ['onion', 'pre-pizza', '', 'pizza-onion'],
+        // Platos de 3 ingredientes
+        ['cheese', 'pre-pizza', 'tomato', 'pizza-tomato'],
+        ['cheese', 'onion', 'pre-pizza', 'pizza-onion'],
+        ['cheese', 'meat', 'pre-pizza,', 'pizza-meat'],
+        /////////////////////////////
+        ['potato', '', '', 'baked-potato'],
+        ['dough', '', '', 'bread'],
+        ['dough', 'egg', '', 'pasta'],
+        ['bread', 'meat', '', 'milanesa'],
+        ['meat', 'pasta', '', 'lasagna'],
+        ['meat', '', '', 'steak'],
+        ['cake-premix', '', '', 'cake'],
+        ['cake-premix', 'fruit', '', 'pastafrola'],
+        ['cake-premix', 'ddl', '', 'cake-ddl'],
+        ['cake-premix', 'carrot', '', 'cake-carrot'],
+      ],
+      action: 'bake'
+    },
+    {
+      name: 'pan',
+      combinations: [
+        ['egg', '', 'fried-egg'],
+        ['potato', '', 'french-fries'],
+        ['meat', '', 'burger'],
+        ['burger', 'cheese', 'burger-cheese'],
+        ['burger', 'tomato', 'burger-tomato'],
+      ],
+      action: 'fry or grill'
+    },
+    {
+      name: 'pot',
+      combinations: [
+        ['water', 'egg', 'boiled-egg'],
+        ['water', 'potato', 'mashed-potato'],
+        ['tomato', 'onion', 'tomato-sauce'],
+        ['tomato', 'garlic', 'tomato-sauce'],
+        ['tomato', '', 'tomato-sauce'],
+        ['milk', 'sugar', 'ddl'],
+        ['meat', 'potato', 'locro'],
+        ['pasta', 'potato', 'gnochi'],
+        ['pasta', 'tomato', 'spaghetti'],
+        ['pasta', 'meat', 'pasta-meatball'],
+      ],
+      action: 'boil'
+    },
+    {
+      name: 'bowl',
+      combinations: [
+        ['water', 'flour', 'dough'],
+        ['water', 'water', 'glass-of-water'],
+        ['fruit', 'sugar', 'fruit-salad'],
+        ['fruit', 'water', 'juice'],
+        ['fruit', 'milk', 'smoothie'],
+        ['glass-of-water', 'fruit', 'juice'],
+        ['glass-of-water', 'sugar', 'soda-water'],
+        ['flour', 'egg', 'pasta'],
+        ['dough', 'sugar', 'cake-premix'],
+        ['lettuce', 'tomato', 'salad'],
+        ['pasta', 'tomato-sauce', 'spaghetti'],
+        ['meat', 'bread', 'sandwich'],
+        ['cake', 'fruit', 'cake-fruit'],
+      ],
+      action: 'combine'
+    }
   ])
 
   const chooseIngredient = (ingredient: ingredient) => {
