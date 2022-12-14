@@ -170,6 +170,91 @@ function App() {
       name: "water",
       isAvailable: true,
       isInMenu: false,
+    },
+    {
+      name: 'pizza-onion',
+      isAvailable: false,
+      isInMenu: true,
+    },
+    {
+      name: 'pizza-tomato',
+      isAvailable: false,
+      isInMenu: true,
+    },
+    {
+      name: 'pizza-meat',
+      isAvailable: false,
+      isInMenu: true,
+    },
+    {
+      name: 'pasta',
+      isAvailable: false,
+      isInMenu: false,
+    },
+    {
+      name: 'milanesa',
+      isAvailable: false,
+      isInMenu: true,
+    },
+    {
+      name: 'lasagna',
+      isAvailable: false,
+      isInMenu: true,
+    },
+    {
+      name: 'steak',
+      isAvailable: false,
+      isInMenu: true,
+    },
+    {
+      name: 'cake',
+      isAvailable: false,
+      isInMenu: true
+    },
+    {
+      name: 'pastafrola',
+      isAvailable: false,
+      isInMenu: true
+    },
+    {
+      name: 'cake-ddl',
+      isAvailable: false,
+      isInMenu: true,
+    },
+    {
+      name: 'cake-carrot',
+      isAvailable: false,
+      isInMenu: true,
+    },
+    {
+      name: 'burger-cheese',
+      isAvailable: false,
+      isInMenu: true
+    },
+    {
+      name: 'mashed-potato',
+      isAvailable: false,
+      isInMenu: true,
+    },
+    {
+      name: 'ddl',
+      isAvailable: false,
+      isInMenu: false,
+    },
+    {
+      name: 'locro',
+      isAvailable: false,
+      isInMenu: true,
+    },
+    {
+      name: 'gnochi',
+      isAvailable: false,
+      isInMenu: true
+    },
+    {
+      name: 'pasta-tomato',
+      isAvailable: false,
+      isInMenu: true
     }
   ])
 
