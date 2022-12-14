@@ -11,4 +11,4 @@
 
 ## Source Code
 
-El código del trabajo se encuentra en la carpeta [tdl-app](./tdl_app/)
+El código del trabajo se encuentra en la carpeta [tdl-app](./tdl_app/README.md)
