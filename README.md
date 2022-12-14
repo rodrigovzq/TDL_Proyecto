@@ -2,7 +2,8 @@
 
 ## Autor: Grupo NULL
 
-| First Header  | Second Header |
+| Nombre  | Padrón |
 | ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| Denise Gayet  | 100828  |
+| Maximiliano Reigada  | - |
+| Rodrigo Vazquez  | - |
