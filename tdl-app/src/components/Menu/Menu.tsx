@@ -18,7 +18,8 @@ function Menu({menu}: Props) {
                 <div className="placeholder">
                     There are no items available yet
                 </div> :<>
-                {menu.map((recipe) =><Ingredient ingredient={recipe} onClick={() => {}}/>)}
+                {menu.map((recipe) =><Ingredient ingredient={recipe} 
+                                      onClick={() => {}}/>)}
                 </>} 
             </div>
         </div>

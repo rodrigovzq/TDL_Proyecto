@@ -22,8 +22,11 @@ function Ingredient({ingredient, onClick}: Props) {
                 <span>{ingredient.name.charAt(0).toUpperCase() +  ingredient.name.slice(1)}</span>
                 </div>
 
-                <div className="ingImgContainer" style={{display: 'flex',alignItems: 'center',justifyContent: 'center'}}>
-                <img className="ingImg" src={ingredientImages(`./${ ingredient.name }.png`)} alt={`${ingredient.name}`}/>
+                <div className="ingImgContainer" style={{display: 'flex',
+                                                        alignItems: 'center',
+                                                        justifyContent: 'center'}}>
+                <img className="ingImg" src={ingredientImages(`./${ ingredient.name }.png`)} 
+                                        alt={`${ingredient.name}`}/>
                 </div>
             </button>
         </>

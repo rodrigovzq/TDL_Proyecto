@@ -12,7 +12,11 @@ export abstract class utensil {
     maxIngredients: number;
     ingredients : ingredient []
 
-    constructor(name: string, combinations: string[][], action: string, maxIngredients: number, ingredients: ingredient[]) {
+    constructor(name: string, 
+                combinations: string[][], 
+                action: string, 
+                maxIngredients: number, 
+                ingredients: ingredient[]) {
         this.name = name;
         this.combinations = combinations;
         this.action = action;
