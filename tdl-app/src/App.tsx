@@ -329,7 +329,7 @@ function App() {
   ])
 
   const chooseIngredient = (ingredient: ingredient) => {
-    if (selectedUtensil === undefined) return;
+    if (selectedUtensil === undefined) {return};
 
     setIngredients(selectedUtensil[0].setIngredients(ingredient))
   }

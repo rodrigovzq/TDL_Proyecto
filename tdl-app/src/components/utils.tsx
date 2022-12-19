@@ -126,16 +126,21 @@ export class Oven extends utensil {
     </div>
     )
 }
+
+  private formatIngredients() : string[] {
+     return ([...this.ingredients.map( (a) => a.name).sort((a,b) =>  (a > b ? 1 : -1)), 
+        ...Array(this.maxIngredients-1).fill('')])
+  }
+  
+  private findRecipes(selectedIngNames: string[]) : string[] | undefined {
+    return (this.combinations.find(
+        (value) => (value.slice(0,-1).every((x,i) => (x === selectedIngNames[i]))
+    )))
+  }
   
   public combine() {
-    const selectedIngNames = [...this.ingredients.map( (a) => a.name).sort((a,b) =>  (a > b ? 1 : -1)), 
-                              ...Array(this.maxIngredients-1).fill('')]
-    console.log(selectedIngNames)
-
-    const result = this.combinations.find(
-        (value) => (value.slice(0,-1).every((x,i) => (x === selectedIngNames[i]))
-    ))
-    console.log(result)
+    const selectedIngNames = this.formatIngredients()    
+    const result = this.findRecipes(selectedIngNames)
     this.cleanUtensil();
     if (result !== undefined) {return result[this.maxIngredients]};
     return undefined
