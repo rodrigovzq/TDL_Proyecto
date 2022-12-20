@@ -27,8 +27,8 @@ function Utensils({utensils, onClick, onCancel} : Props) {
                     <img src={instructionsBtn}/>
                     <ul className="instructionsList">
                         {
-                            utensils.map((a) => (
-                                <li>
+                            utensils.map((a : utensil, index: number) => (
+                                <li key={index}>
                                     <img className="bullet" src={bullet} />
                                     <div className="instructionText">Tap the <img className="icon" src={utensilsImages(`./${a.name}.png`)}/> to <strong>{a.action}</strong> ingredients</div>
                                 </li>
