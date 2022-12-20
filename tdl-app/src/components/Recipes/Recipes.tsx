@@ -36,8 +36,8 @@ function Recipes({recipes, onClick, onCancel}: Props) {
 			</div>
 			<div className="recipesList">
 				{
-				recipes.map((ingredient: any) => (
-					<div className="recipesElement">
+				recipes.map((ingredient: ingredient, index: number) => (
+					<div className="recipesElement" key={index}>
 							<Ingredient ingredient={ingredient} onClick={onClick}/>
 					</div>
 				))

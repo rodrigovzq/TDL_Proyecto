@@ -40,8 +40,8 @@ function Utensils({utensils, onClick, onCancel} : Props) {
             </div>
             <div className="utensilsList">
                 {
-                utensils.map((utensil: utensil) => (
-                    <div className="utensilsElement">
+                utensils.map((utensil: utensil, index: number) => (
+                    <div className="utensilsElement" key={index}>
                         {utensil.display(onClick)}
                     </div>
                 ))
