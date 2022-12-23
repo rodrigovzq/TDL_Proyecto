@@ -5,8 +5,8 @@
 | Nombre  | Padrón |
 | ------------- | ------------- |
 | Denise Gayet  | 100828  |
-| Maximiliano Reigada  | - |
-| Rodrigo Vazquez  | - |
+| Maximiliano Reigada  | 10838 |
+| Rodrigo Vazquez  | 98934 |
 
 
 ## Source Code
